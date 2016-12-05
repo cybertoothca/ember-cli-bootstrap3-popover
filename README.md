@@ -163,8 +163,8 @@ with a valid key and secret:
 
 
     \[cybertooth\]
-    aws_access_key_id = AKIAITANSJFASPHHBIBA
-    aws_secret_access_key = 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
+    aws_access_key_id = <KEY>
+    aws_secret_access_key = <SECRET>
 
 2. Deploy by invoking the following command: `ember deploy production`
 1. Confirm your changes are showing up in our S3 container: http://ember-cli-bootstrap3-popover.s3-website-us-west-2.amazonaws.com/
