@@ -168,5 +168,3 @@ with a valid key and secret:
 
 2. Deploy by invoking the following command: `ember deploy production`
 1. Confirm your changes are showing up in our S3 container: http://ember-cli-bootstrap3-popover.s3-website-us-west-2.amazonaws.com/
-
-
