@@ -1,5 +1,4 @@
 import Ember from 'ember';
-// import PopoverMixin from 'ember-cli-bootstrap3-popover/mixins/popover';
 import PopoverMixin from 'ember-cli-bootstrap3-popover/mixins/popover';
 import { module, test } from 'qunit';
 

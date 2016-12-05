@@ -4,6 +4,10 @@
 
 This addon allows you to quickly and conveniently create a [Bootstrap3 Popover](http://getbootstrap.com/javascript/#popovers).
 
+## Demo
+
+[The demonstration (dummy) web application can be found here](http://ember-cli-bootstrap3-popover.s3-website-us-west-2.amazonaws.com/). 
+
 ## What Does This Addon Do?
 
 This addon supplied the following _components_:
@@ -151,3 +155,16 @@ command (that can be run anywhere):
 1. Remove the reference to the `ember-cli-bootstrap3-popover`
 in your _other_ project's `package.json`.
 1. Run an `npm prune` from the root of your _other_ project's command line.
+
+# Deploying The Dummy Application
+
+1. Make sure your `~/.aws/credentials` file has a profile named _cybertooth_ 
+with a valid key and secret:
+
+
+    \[cybertooth\]
+    aws_access_key_id = <KEY>
+    aws_secret_access_key = <SECRET>
+
+2. Deploy by invoking the following command: `ember deploy production`
+1. Confirm your changes are showing up in our S3 container: http://ember-cli-bootstrap3-popover.s3-website-us-west-2.amazonaws.com/
