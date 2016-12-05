@@ -1,2 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Raleway:700');
+
+$font-family-base: lato, "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$headings-font-family: Raleway, $font-family-base;
 //noinspection CssUnknownTarget
 @import 'ember-cli-bootstrap3-sass';
+//noinspection CssUnknownTarget
+@import 'ember-cli-bootstrap3-theme';
