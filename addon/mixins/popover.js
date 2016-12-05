@@ -70,7 +70,7 @@ export default Ember.Mixin.create({
    *
    * The outermost wrapper element should have the .popover class.
    */
-  template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>',
+  template: Ember.String.htmlSafe('<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'),
   /**
    * Default title value if title attribute isn't present.
    * If a function is given, it will be called with its this reference set to the element that the popover
