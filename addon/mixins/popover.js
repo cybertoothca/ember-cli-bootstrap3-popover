@@ -60,6 +60,7 @@ export default Ember.Mixin.create({
    */
   selector: false,
   /**
+   * RENAMED `template` to `popoverTemplate` to avoid naming conflicts in Ember-1.13.
    * Base HTML to use when creating the popover.
    *
    * The popover's title will be injected into the .popover-title.
@@ -70,7 +71,7 @@ export default Ember.Mixin.create({
    *
    * The outermost wrapper element should have the .popover class.
    */
-  template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>',
+  popoverTemplate: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>',
   /**
    * Default title value if title attribute isn't present.
    * If a function is given, it will be called with its this reference set to the element that the popover
@@ -83,8 +84,9 @@ export default Ember.Mixin.create({
    */
   getOptions() {
     const hash =
-      this.getProperties('animation', 'content', 'delay', 'html', 'placement', 'selector', 'template', 'title');
+      this.getProperties('animation', 'content', 'delay', 'html', 'placement', 'selector', 'title');
     hash.container = this.get('popoverContainer');
+    hash.template = this.get('popoverTemplate');
     hash.trigger = this.get('popoverTrigger');
     return hash;
   }
