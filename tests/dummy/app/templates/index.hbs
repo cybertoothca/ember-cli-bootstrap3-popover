@@ -1,0 +1,72 @@
+<section class="container">
+  <h1>
+    ember-cli-bootstrap3-popover
+    <img src="https://badge.fury.io/js/ember-cli-bootstrap3-popover.svg" alt=""/>
+  </h1>
+
+  <h2>Examples</h2>
+
+  <h3>Text-Based <code>title</code> & <code>content</code></h3>
+  <p>
+    {{#twbs-popover title="Some Title" content="The content."}}
+      Click For Popover
+    {{/twbs-popover}}
+  </p>
+  <pre>
+    \{{#twbs-popover title="Some Title" content="The content."}}
+      Click For Popover
+    \{{/twbs-popover}}
+  </pre>
+
+  <h3>As A Button</h3>
+  <p>
+    {{#twbs-popover title="Some Title" content="The content." classNames="btn btn-default"}}
+      Click For Popover & Click To Close
+    {{/twbs-popover}}
+  </p>
+  <pre>
+    \{{#twbs-popover title="Some Title" content="The content." classNames="btn btn-default"}}
+      Click For Popover & Click To Close
+    \{{/twbs-popover}}
+  </pre>
+
+  <h3>Popover <code>placement</code></h3>
+  <p>
+    {{#twbs-popover title="Some Title" content="The content." placement="bottom"}}
+      Click For Popover & Click To Close
+    {{/twbs-popover}}
+  </p>
+  <pre>
+    \{{#twbs-popover title="Some Title" content="The content." placement="bottom"}}
+      Click For Popover & Click To Close
+    \{{/twbs-popover}}
+  </pre>
+
+  <h3>Popover Dismiss On Click (<code>popoverTrigger</code>)</h3>
+  <p>
+    {{#twbs-popover title="Some Title" content="The content." placement="bottom" popoverTrigger="focus"}}
+      Click For Popover
+    {{/twbs-popover}}
+  </p>
+  <pre>
+    \{{#twbs-popover title="Some Title" content="The content." popoverTrigger="focus"}}
+      Click For Popover
+    \{{/twbs-popover}}
+  </pre>
+  <div class="alert alert-warning">
+    <p>
+      See <a href="http://getbootstrap.com/javascript/#dismiss-on-next-click" target="_blank">http://getbootstrap.com/javascript/#dismiss-on-next-click</a>
+      for additional information.
+    </p>
+    <ul>
+      <li>
+        An explicit tabindex may sometimes be required in order for the focus-style triggering to work correctly.
+      </li>
+      <li>
+        The role of the twbs-popover may need to be set to button.
+      </li>
+    </ul>
+  </div>
+</section>
+
+{{outlet}}
