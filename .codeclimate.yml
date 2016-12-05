@@ -2,8 +2,6 @@
 engines:
   duplication:
     enabled: true
-    exclude_fingerprints:
-    - 52a6d397239e349eb126f30a952e04e9
     config:
       languages:
       - ruby
@@ -12,6 +10,8 @@ engines:
       - php
   eslint:
     enabled: true
+    exclude_fingerprints:
+    - 52a6d397239e349eb126f30a952e04e9
   fixme:
     enabled: true
 ratings:
