@@ -83,16 +83,16 @@ here: [http://getbootstrap.com/javascript/#popovers-options](http://getbootstrap
 
 ##### Properties
 
-* `animation?` (aliased to `animation`)- **Default `true`**
-* `content` - **Default `''`**
-* `delay` - **Default `0`**
-* `html?` (aliased to `html`) - **Default `false`**
-* `placement` - **Default `'right'`**
-* `popoverContainer` - **Default `false`**
-* `popoverTrigger` - **Default `'click'`**
-* `selector` - **Default `false`**
-* `template` - **Default `'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'`**
-* `title` - **Default `''`**
+* `animation?` (aliased to `animation`)- **Default** `true`
+* `content` - **Default** `''`
+* `delay` - **Default** `0`
+* `html?` (aliased to `html`) - **Default** `false`
+* `placement` - **Default** `'right'`
+* `popoverContainer` - **Default** `false`
+* `popoverTemplate` - **Default** `'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'`
+* `popoverTrigger` - **Default** `'click'`
+* `selector` - **Default** `false`
+* `title` - **Default** `''`
 
 ##### Methods
 
@@ -162,7 +162,7 @@ in your _other_ project's `package.json`.
 with a valid key and secret:
 
 
-    \[cybertooth\]
+    [cybertooth]
     aws_access_key_id = <KEY>
     aws_secret_access_key = <SECRET>
 
