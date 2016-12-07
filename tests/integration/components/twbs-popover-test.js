@@ -5,6 +5,31 @@ moduleForComponent('twbs-popover', 'Integration | Component | twbs popover', {
   integration: true
 });
 
+test('when clicking the link the popover has the nested `twbs-popover.title`', function(assert) {
+  this.render(hbs`
+    {{#twbs-popover html?=true as |po|}}
+      Link Text
+      {{#po.title}}<h1>Heading One</h1>{{/po.title}}
+    {{/twbs-popover}}
+  `);
+
+  this.$('a').click();
+  assert.equal(this.$('.popover-title').html().trim(), '<h1>Heading One</h1>');
+});
+
+test('when clicking the link the popover has the nested `twbs-popover.content`', function(assert) {
+  this.render(hbs`
+    {{#twbs-popover html?=true as |po|}}
+      Link Text
+      {{#po.content}}<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>{{/po.content}}
+    {{/twbs-popover}}
+  `);
+
+  this.$('a').click();
+  assert.equal(this.$('.popover-content').html().trim(),
+    '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>');
+});
+
 test('when passing a block it is used as the anchor text', function (assert) {
   // Template block usage:
   this.render(hbs`
