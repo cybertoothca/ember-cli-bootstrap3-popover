@@ -5,21 +5,14 @@ moduleForComponent('twbs-popover/content', 'Integration | Component | twbs popov
   integration: true
 });
 
-test('it renders', function (assert) {
 
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
-  this.render(hbs`{{twbs-popover/content}}`);
-
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
+test('the content div-container is hidden', function (assert) {
   this.render(hbs`
-    {{#twbs-popover/content}}
-      template block text
-    {{/twbs-popover/content}}
+{{#twbs-popover/content}}
+  <h2>Heading Two</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+{{/twbs-popover/content}}
   `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.ok(this.$('div').hasClass('hidden'));
+  assert.ok(this.$('div').hasClass('twbs-popover-content'));
 });

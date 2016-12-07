@@ -5,21 +5,12 @@ moduleForComponent('twbs-popover/title', 'Integration | Component | twbs popover
   integration: true
 });
 
-test('it renders', function (assert) {
-
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
-  this.render(hbs`{{twbs-popover/title}}`);
-
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
+test('the title div-container is hidden', function (assert) {
   this.render(hbs`
-    {{#twbs-popover/title}}
-      template block text
-    {{/twbs-popover/title}}
+{{#twbs-popover/title}}
+  <h1>Heading One</h1>
+{{/twbs-popover/title}}
   `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.ok(this.$('div').hasClass('hidden'));
+  assert.ok(this.$('div').hasClass('twbs-popover-title'));
 });
