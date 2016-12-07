@@ -1,4 +1,4 @@
-# ember-cli-bootstrap3-popover [![GitHub version](http://badge.fury.io/gh/cybertoothca%2Fember-cli-bootstrap3-popover.svg)](https://badge.fury.io/gh/cybertoothca%2Fember-cli-bootstrap3-popover)
+# ember-cli-bootstrap3-popover [![GitHub version](http://badge.fury.io/gh/cybertoothca%2Fember-cli-bootstrap3-popover.svg)](https://badge.fury.io/gh/cybertoothca%2Fember-cli-bootstrap3-popover) ![](http://embadge.io/v1/badge.svg?start=2.3.0)
 
 [![npm version](http://badge.fury.io/js/ember-cli-bootstrap3-popover.svg)](http://badge.fury.io/js/ember-cli-bootstrap3-popover) [![CircleCI](http://circleci.com/gh/cybertoothca/ember-cli-bootstrap3-popover.svg?style=shield)](http://circleci.com/gh/cybertoothca/ember-cli-bootstrap3-popover) [![Code Climate](http://codeclimate.com/github/cybertoothca/ember-cli-bootstrap3-popover/badges/gpa.svg)](http://codeclimate.com/github/cybertoothca/ember-cli-bootstrap3-popover) ![Dependencies](http://david-dm.org/cybertoothca/ember-cli-bootstrap3-popover.svg) [![ember-observer-badge](http://emberobserver.com/badges/ember-cli-bootstrap3-popover.svg)](http://emberobserver.com/addons/ember-cli-bootstrap3-popover) [![License](http://img.shields.io/npm/l/ember-cli-bootstrap3-popover.svg)](LICENSE.md)
 
@@ -29,7 +29,7 @@ section below._
 
 ## Requirements
 
-* Ember >= 1.13.0
+* **Ember >= 2.3.0**: This addon uses the [hash helper](http://emberjs.com/blog/2016/01/15/ember-2-3-released.html#toc_hash-helper) which was introduced in Ember-2.3.0.
 * Ember CLI
 * You must have Bootstrap 3.x installed in your Ember application.  Feel free to use the
   [ember-cli-bootstrap3-sass](http://emberobserver.com/addons/ember-cli-bootstrap3-sass)
@@ -83,6 +83,8 @@ popover body.
 A component that nests inside of a `{{#twbs-popover}}` and generates the content for a popover.  This permits
 the easy re-use of existing components inside the popover content and also clean html.
 
+_The `{{twbs-popover.content}}` requires the _hash_ helper from Ember-2.3.0._
+
 ##### Arguments
 
 * _None_.
@@ -107,6 +109,8 @@ of the popover.
 
 A component that nests inside of a `{{#twbs-popover}}` and generates the title for a popover.  This permits
 the easy re-use of existing components inside the popover title.
+
+_The `{{twbs-popover.title}}` requires the _hash_ helper from Ember-2.3.0._
 
 ##### Arguments
 
