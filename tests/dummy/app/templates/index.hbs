@@ -103,19 +103,21 @@
     {{/twbs-popover}}
   </div>
   <br/>
+  {{!-- @formatter:off --}}
   <pre>
     \{{#twbs-popover
-      content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cupiditate harum, non officiis quasi reiciendis. Asperiores dolorem optio quidem! Accusantium aspernatur cumque dolorem molestias porro, quasi reprehenderit. Nesciunt, reprehenderit, voluptatem!"
+      content="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
       placement="right" html?=true as |po|}}
-    \{{#po.title}}
+      \{{#po.title}}
         Title With A Cog
         &lt;button class="btn btn-default btn-xs">
           &lt;i class="glyphicon glyphicon-cog">&lt;/i>
         &lt;/button>
-    \{{/po.title}}
+      \{{/po.title}}
       Click For Popover & Click To Hide
     \{{/twbs-popover}}
   </pre>
+  {{!-- @formatter:on --}}
 
   <h3>Popover Using HTML <code>twbs-popover.content</code> Component</h3>
   <div>
@@ -133,19 +135,21 @@
     {{/twbs-popover}}
   </div>
   <br/>
+  {{!-- @formatter:off --}}
   <pre>
     \{{#twbs-popover title="Some Title With &lt;code>Markup&lt;/code>" placement="right" popoverTrigger="focus" html?=true as |po|}}
-    \{{#po.content}}
+      \{{#po.content}}
         &lt;h4>A Heading Four&lt;/h4>
-        &lt;p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cupiditate harum, non officiis quasi
-          reiciendis. Asperiores dolorem optio quidem! Accusantium aspernatur cumque dolorem molestias porro, quasi
-          reprehenderit. Nesciunt, reprehenderit, voluptatem!
-        &lt;/p>
-    \{{/po.content}}
+          &lt;p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cupiditate harum, non officiis quasi
+            reiciendis. Asperiores dolorem optio quidem! Accusantium aspernatur cumque dolorem molestias porro, quasi
+            reprehenderit. Nesciunt, reprehenderit, voluptatem!
+          &lt;/p>
+      \{{/po.content}}
       Click For Popover
     \{{/twbs-popover}}
   </pre>
+  {{!-- @formatter:on --}}
 </section>
 
 {{outlet}}

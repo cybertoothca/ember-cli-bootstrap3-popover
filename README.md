@@ -14,6 +14,10 @@ This addon supplied the following _components_:
 
 * `twbs-popover` - an anchor element that will load a popover based on the supplied
 title and content attributes.
+* `twbs-popover.content` - a component you nest inside a `twbs-popover` that will generate
+the _content_ for the popover.
+* `twbs-popover.title` - a component you nest inside a `twbs-popover` that will generate
+the _title_ for the popover.
 
 ...and the following _mixins_:
 
@@ -60,9 +64,9 @@ the popover.
 
 * _All of the properties listed in the `Popover` mixin_.
 * `href` - the anchors href attribute; there is likely no need to override 
-this.**Default `javascript:void(0)`**
-* `role` - the elements role attribute.  **Default `link`**.
-* `tabindex` - the tabindex.  **Default `undefined`**.
+this.**Default** `javascript:void(0)`
+* `role` - the elements role attribute.  **Default** `link`
+* `tabindex` - the tabindex.  **Default** `undefined`
 
 ##### Examples
 
@@ -73,6 +77,55 @@ popover body.
     {{#twbs-popover title="Some Title" content="The content."}}
       Click For Popover
     {{/twbs-popover}}
+
+#### `{{twbs-popover.content}}`
+
+A component that nests inside of a `{{#twbs-popover}}` and generates the content for a popover.  This permits
+the easy re-use of existing components inside the popover content and also clean html.
+
+##### Arguments
+
+* _None_.
+
+##### Examples
+
+Create a link that generates a popover with some html and even another component's output in the content part
+of the popover.
+
+    {{#twbs-popover html?=true as |po|}}
+      {{#po.content}}
+        <h1>A Big Heading</h1>
+        <p>A paragraph</p>
+        <p>{{t "some.i18n.message"}}</p>
+      {{/po.content}}
+    {{/twbs-popover}}
+
+[Check out the demo application for several other examples](http://ember-cli-bootstrap3-popover.s3-website-us-west-2.amazonaws.com/)
+
+#### `{{twbs-popover.title}}`
+
+A component that nests inside of a `{{#twbs-popover}}` and generates the title for a popover.  This permits
+the easy re-use of existing components inside the popover title.
+
+##### Arguments
+
+* _None_.
+
+##### Examples
+
+Create a link that generates a popover with some html and even another component's output in the title-bar of
+the popover.
+
+    {{#twbs-popover html?=true as |po|}}
+      {{#po.title}}
+        <h1>
+          A Big Heading
+          <small>With A Little Small Stuff</small>
+        </h1>
+      {{/po.content}}
+    {{/twbs-popover}}
+
+[Check out the demo application for several other examples](http://ember-cli-bootstrap3-popover.s3-website-us-west-2.amazonaws.com/)
 
 ### Mixins
 
@@ -162,9 +215,9 @@ in your _other_ project's `package.json`.
 with a valid key and secret:
 
 
-    [cybertooth]
-    aws_access_key_id = <KEY>
-    aws_secret_access_key = <SECRET>
+      [cybertooth]
+      aws_access_key_id = <KEY>
+      aws_secret_access_key = <SECRET>
 
 2. Deploy by invoking the following command: `ember deploy production`
 1. Confirm your changes are showing up in our S3 container: http://ember-cli-bootstrap3-popover.s3-website-us-west-2.amazonaws.com/

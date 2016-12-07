@@ -21,10 +21,10 @@ export default Ember.Component.extend(Popover, {
   }),
   _initializePopover: Ember.on('didInsertElement', function () {
     const options = this.getOptions();
-    if (this.$('.twbs-popover-title').length == 1) {
+    if (this.$('.twbs-popover-title').length === 1) {
       Ember.set(options, 'title', this.$('.twbs-popover-title').html());
     }
-    if (this.$('.twbs-popover-content').length == 1) {
+    if (this.$('.twbs-popover-content').length === 1) {
       Ember.set(options, 'content', this.$('.twbs-popover-content').html());
     }
     this.$().popover(options);
