@@ -14,12 +14,19 @@ export default Ember.Component.extend(Popover, {
   href: Ember.String.htmlSafe('javascript:void(0)'), // jshint ignore:line
   layout,
   role: 'link',
-  tagName: 'a',
   tabindex: undefined,
+  tagName: 'a',
   _destroyPopover: Ember.on('willDestroyElement', function () {
     this.$().popover('destroy');
   }),
   _initializePopover: Ember.on('didInsertElement', function () {
-    this.$().popover(this.getOptions());
+    const options = this.getOptions();
+    if (this.$('.twbs-popover-title').length === 1) {
+      Ember.set(options, 'title', this.$('.twbs-popover-title').html());
+    }
+    if (this.$('.twbs-popover-content').length === 1) {
+      Ember.set(options, 'content', this.$('.twbs-popover-content').html());
+    }
+    this.$().popover(options);
   })
 });

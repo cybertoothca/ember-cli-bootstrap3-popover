@@ -7,3 +7,11 @@ $headings-font-family: Raleway, $font-family-base;
 @import 'ember-cli-bootstrap3-sass';
 //noinspection CssUnknownTarget
 @import 'ember-cli-bootstrap3-theme';
+
+body {
+  margin-bottom: 100%;
+}
+
+h3 {
+  margin-top: 3rem;
+}
