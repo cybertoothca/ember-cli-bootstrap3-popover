@@ -93,6 +93,7 @@ Create a link that generates a popover with some html and even another component
 of the popover.
 
     {{#twbs-popover html?=true as |po|}}
+      Click This Link For The Popover
       {{#po.content}}
         <h1>A Big Heading</h1>
         <p>A paragraph</p>
@@ -117,6 +118,7 @@ Create a link that generates a popover with some html and even another component
 the popover.
 
     {{#twbs-popover html?=true as |po|}}
+      Click This Link For The Popover
       {{#po.title}}
         <h1>
           A Big Heading
