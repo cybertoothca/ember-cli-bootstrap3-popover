@@ -3,5 +3,8 @@ import layout from '../../templates/components/twbs-popover/content';
 
 export default Ember.Component.extend({
   classNames: ['hidden', 'twbs-popover-content'],
-  layout
+  layout,
+  _registerContent: Ember.on('didInsertElement', function () {
+    this.get('registerContent')();
+  })
 });

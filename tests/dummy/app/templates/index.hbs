@@ -5,151 +5,40 @@
   </h1>
 
   <h2>Examples</h2>
+</section>
 
-  <h3>Plain Text <code>title</code> & <code>content</code></h3>
-  <p>
-    {{#twbs-popover title="Some Title" content="The content."}}
-      Click For Popover
-    {{/twbs-popover}}
-  </p>
-  <pre>
-    \{{#twbs-popover title="Some Title" content="The content."}}
-      Click For Popover
-    \{{/twbs-popover}}
-  </pre>
+<section class="container">
+  {{popover-demo.click-triggered}}
+</section>
 
-  <h3>As A Button</h3>
-  <p>
-    {{#twbs-popover title="Some Title" content="The content." classNames="btn btn-default"}}
-      Click For Popover & Click To Close
-    {{/twbs-popover}}
-  </p>
-  <pre>
-    \{{#twbs-popover title="Some Title" content="The content." classNames="btn btn-default"}}
-      Click For Popover & Click To Close
-    \{{/twbs-popover}}
-  </pre>
+<section class="container">
+  {{popover-demo.hover-triggered}}
+</section>
 
-  <h3>Popover <code>placement</code></h3>
-  <p>
-    {{#twbs-popover title="Some Title" content="The content." placement="bottom"}}
-      Click For Popover & Click To Close
-    {{/twbs-popover}}
-  </p>
-  <pre>
-    \{{#twbs-popover title="Some Title" content="The content." placement="bottom"}}
-      Click For Popover & Click To Close
-    \{{/twbs-popover}}
-  </pre>
+<section class="container">
+  {{popover-demo.focus-triggered}}
+</section>
 
-  <h3>Popover Dismiss On Focus Out (<code>popoverTrigger</code>)</h3>
-  <p>
-    {{#twbs-popover title="Some Title" content="The content." placement="bottom" popoverTrigger="focus"}}
-      Click For Popover
-    {{/twbs-popover}}
-  </p>
-  <pre>
-    \{{#twbs-popover title="Some Title" content="The content." popoverTrigger="focus"}}
-      Click For Popover
-    \{{/twbs-popover}}
-  </pre>
-  <br>
-  <div class="alert alert-warning">
-    <h4>Quirks</h4>
-    <p>
-      See <a href="http://getbootstrap.com/javascript/#dismiss-on-next-click" target="_blank">http://getbootstrap.com/javascript/#dismiss-on-next-click</a>
-      for additional information.
-    </p>
-    <ul>
-      <li>
-        An explicit tabindex may sometimes be required in order for the focus-style triggering to work correctly.
-      </li>
-      <li>
-        The role of the twbs-popover may need to be set to button.
-      </li>
-    </ul>
+<section class="container">
+  <h3>Content</h3>
+  <div class="row">
+    <div class="col-sm-4">
+      {{#twbs-popover popoverTrigger="click" as |popover|}}
+        {{#popover.trigger}}
+          <button class="btn btn-default">Click This Button</button>
+        {{/popover.trigger}}
+        {{#popover.content}}
+          Click again to hide.
+        {{/popover.content}}
+      {{/twbs-popover}}
+    </div>
+    <div class="col-sm-8">
+      {{!-- @formatter:off --}}
+<pre>
+</pre>
+      {{!-- @formatter:on --}}
+    </div>
   </div>
-
-  <h3>Popover Using HTML Content</h3>
-  <p>
-    {{#twbs-popover
-      title="Some Title" html?=true
-      content="Some <em>emphasized</em> text and some <strong>strong</strong> text."
-      placement="top" popoverTrigger="focus"}}
-      Click For Inline Html Popover
-    {{/twbs-popover}}
-  </p>
-  <pre>
-    \{{#twbs-popover
-      title="Some Title" html?=true
-      content="Some &lt;em>emphasized&lt;/em> text and some &lt;strong>strong&lt;/strong> text."
-      placement="top" popoverTrigger="focus"}}
-      Click For Inline Html Popover
-    \{{/twbs-popover}}
-  </pre>
-
-  <h3>Popover Using HTML <code>twbs-popover.title</code> Component</h3>
-  <div>
-    {{#twbs-popover
-      content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cupiditate harum, non officiis quasi reiciendis. Asperiores dolorem optio quidem! Accusantium aspernatur cumque dolorem molestias porro, quasi reprehenderit. Nesciunt, reprehenderit, voluptatem!"
-      placement="right" html?=true as |po|}}
-      {{#po.title}}
-        Title With A Cog
-        <button class="btn btn-default btn-xs">
-          <i class="glyphicon glyphicon-cog"></i>
-        </button>
-      {{/po.title}}
-      Click For Popover & Click To Hide
-    {{/twbs-popover}}
-  </div>
-  <br/>
-  {{!-- @formatter:off --}}
-  <pre>
-    \{{#twbs-popover
-      content="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-      placement="right" html?=true as |po|}}
-      \{{#po.title}}
-        Title With A Cog
-        &lt;button class="btn btn-default btn-xs">
-          &lt;i class="glyphicon glyphicon-cog">&lt;/i>
-        &lt;/button>
-      \{{/po.title}}
-      Click For Popover & Click To Hide
-    \{{/twbs-popover}}
-  </pre>
-  {{!-- @formatter:on --}}
-
-  <h3>Popover Using HTML <code>twbs-popover.content</code> Component</h3>
-  <div>
-    {{#twbs-popover title="Some Title With <code>Markup</code>" placement="right" popoverTrigger="focus"
-                    html?=true as |po|}}
-      {{#po.content}}
-        <h4>A Heading Four</h4>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cupiditate harum, non officiis quasi
-          reiciendis. Asperiores dolorem optio quidem! Accusantium aspernatur cumque dolorem molestias porro, quasi
-          reprehenderit. Nesciunt, reprehenderit, voluptatem!
-        </p>
-      {{/po.content}}
-      Click For Popover
-    {{/twbs-popover}}
-  </div>
-  <br/>
-  {{!-- @formatter:off --}}
-  <pre>
-    \{{#twbs-popover title="Some Title With &lt;code>Markup&lt;/code>" placement="right" popoverTrigger="focus" html?=true as |po|}}
-      \{{#po.content}}
-        &lt;h4>A Heading Four&lt;/h4>
-          &lt;p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cupiditate harum, non officiis quasi
-            reiciendis. Asperiores dolorem optio quidem! Accusantium aspernatur cumque dolorem molestias porro, quasi
-            reprehenderit. Nesciunt, reprehenderit, voluptatem!
-          &lt;/p>
-      \{{/po.content}}
-      Click For Popover
-    \{{/twbs-popover}}
-  </pre>
-  {{!-- @formatter:on --}}
 </section>
 
 {{outlet}}

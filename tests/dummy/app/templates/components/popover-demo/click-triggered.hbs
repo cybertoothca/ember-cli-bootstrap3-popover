@@ -1,0 +1,69 @@
+<h3>Click Triggered Popover</h3>
+
+<div class="row">
+  <div class="col-sm-4">
+    {{#twbs-popover content="Click again to hide." as |popover|}}
+      {{#popover.trigger}}
+        Click this text.
+      {{/popover.trigger}}
+    {{/twbs-popover}}
+  </div>
+  <div class="col-sm-8">
+    {{!-- @formatter:off --}}
+<pre>\{{#twbs-popover content="Click again to hide" as |popover|}}
+  \{{#popover.trigger}}
+    Click this text.
+  \{{/popover.trigger}}
+\{{/twbs-popover}}
+</pre>
+      {{!-- @formatter:on --}}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-4">
+    {{#twbs-popover content="Click again to hide." as |popover|}}
+      {{#popover.trigger}}
+        <a href="javascript:void(0)">Click this anchor</a>
+      {{/popover.trigger}}
+    {{/twbs-popover}}
+  </div>
+  <div class="col-sm-8">
+    {{!-- @formatter:off --}}
+<pre>
+</pre>
+      {{!-- @formatter:on --}}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-4">
+    {{#twbs-popover title="Popover Title" content="Click again to hide." as |popover|}}
+      {{#popover.trigger}}
+        <a href="javascript:void(0)">Click this anchor, check out the title.</a>
+      {{/popover.trigger}}
+    {{/twbs-popover}}
+  </div>
+  <div class="col-sm-8">
+    {{!-- @formatter:off --}}
+<pre>
+</pre>
+      {{!-- @formatter:on --}}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-4">
+    {{#twbs-popover content="Click again to hide." as |popover|}}
+      {{#popover.trigger}}
+        <button class="btn btn-default">Click this button</button>
+      {{/popover.trigger}}
+    {{/twbs-popover}}
+  </div>
+  <div class="col-sm-8">
+    {{!-- @formatter:off --}}
+<pre>
+</pre>
+      {{!-- @formatter:on --}}
+  </div>
+</div>

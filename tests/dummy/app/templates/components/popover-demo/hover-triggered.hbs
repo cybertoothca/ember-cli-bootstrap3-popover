@@ -1,0 +1,17 @@
+<h3>Hover Triggered Popover</h3>
+
+<div class="row">
+  <div class="col-sm-4">
+    {{#twbs-popover content="Mouse out of text to hide" popoverTrigger="hover" as |popover|}}
+      {{#popover.trigger}}
+        Hover over this text for the popover.
+      {{/popover.trigger}}
+    {{/twbs-popover}}
+  </div>
+  <div class="col-sm-8">
+    {{!-- @formatter:off --}}
+<pre>
+</pre>
+      {{!-- @formatter:on --}}
+  </div>
+</div>
