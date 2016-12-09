@@ -5,7 +5,7 @@ module.exports = function (deployTarget) {
     build: {},
     // include other plugin configuration that applies to all deploy targets here
     s3: {
-      bucket: 'ember-cli-bootstrap3-popover',
+      bucket: 'ember-cli-bootstrap3-popover.cybertooth.io',
       filePattern: '**/*.{js,css,png,gif,ico,jpg,map,xml,txt,svg,swf,eot,ttf,woff,woff2,otf,html}',
       profile: 'cybertooth',
       region: 'us-west-2'

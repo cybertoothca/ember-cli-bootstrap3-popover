@@ -6,7 +6,7 @@ This addon allows you to quickly and conveniently create a [Bootstrap3 Popover](
 
 ## Demo
 
-[The demonstration (dummy) web application can be found here](http://ember-cli-bootstrap3-popover.s3-website-us-west-2.amazonaws.com/). 
+[The demonstration web application can be found here](http://ember-cli-bootstrap3-popover.cybertooth.io/). 
 
 ## What Does This Addon Do?
 
@@ -217,13 +217,13 @@ in your _other_ project's `package.json`.
 
 # Deploying The Dummy Application
 
-1. Make sure your `~/.aws/credentials` file has a profile named _cybertooth_ 
-with a valid key and secret:
+Make sure your `~/.aws/credentials` file has a profile named _cybertooth_ 
+with a valid key and secret,
 
+    [cybertooth]
+    aws_access_key_id = <KEY>
+    aws_secret_access_key = <SECRET>
 
-      [cybertooth]
-      aws_access_key_id = <KEY>
-      aws_secret_access_key = <SECRET>
+Deploy by invoking the following command: `ember deploy production`
 
-2. Deploy by invoking the following command: `ember deploy production`
-1. Confirm your changes are showing up in our S3 container: http://ember-cli-bootstrap3-popover.s3-website-us-west-2.amazonaws.com/
+Confirm your changes are showing up in our S3 container: http://ember-cli-bootstrap3-popover.cybertooth.io/
