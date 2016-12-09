@@ -9,36 +9,32 @@
 
 <section class="container">
   {{popover-demo.click-triggered}}
+  <hr/>
 </section>
 
 <section class="container">
   {{popover-demo.hover-triggered}}
+  <hr/>
 </section>
 
 <section class="container">
   {{popover-demo.focus-triggered}}
+  <hr/>
 </section>
 
 <section class="container">
-  <h3>Content</h3>
-  <div class="row">
-    <div class="col-sm-4">
-      {{#twbs-popover popoverTrigger="click" as |popover|}}
-        {{#popover.trigger}}
-          <button class="btn btn-default">Click This Button</button>
-        {{/popover.trigger}}
-        {{#popover.content}}
-          Click again to hide.
-        {{/popover.content}}
-      {{/twbs-popover}}
-    </div>
-    <div class="col-sm-8">
-      {{!-- @formatter:off --}}
-<pre>
-</pre>
-      {{!-- @formatter:on --}}
-    </div>
-  </div>
+  {{popover-demo.plain-or-html}}
+  <hr/>
+</section>
+
+<section class="container">
+  {{popover-demo.triggering-methods}}
+  <hr/>
+</section>
+
+<section class="container">
+  {{popover-demo.other-popover-options}}
+  <hr/>
 </section>
 
 {{outlet}}

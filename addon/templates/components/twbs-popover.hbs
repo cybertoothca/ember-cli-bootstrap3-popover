@@ -1,2 +1,8 @@
 {{yield
-  (hash trigger=(component "twbs-popover.trigger") content=(component "twbs-popover.content" registerContent=(action "setPopoverContent")) title=(component "twbs-popover.title"))}}
+  (hash
+    trigger=(component "twbs-popover.trigger")
+    content=(component "twbs-popover.content" registerContent=(action "setPopoverContent"))
+    title=(component "twbs-popover.title" registerTitle=(action "setPopoverTitle"))
+  )
+  (action "show")
+}}
