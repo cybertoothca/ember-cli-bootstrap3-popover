@@ -1,22 +1,60 @@
-<h3>Invoking Popover <code>show()</code></h3>
+<h3>Invoking Popover Methods</h3>
 
 <div class="row">
-  <div class="col-sm-4">
-    {{#twbs-popover popoverTrigger="click" as |popover show|}}
+  <div class="col-sm-4 form-group">
+    {{#twbs-popover popoverTrigger="manual" as |popover hide show toggle|}}
       {{#popover.trigger}}
-        <a href="javascript:void(0)">The Popover Is Bound To This Text</a>
+        The Popover Is Bound To This Text
       {{/popover.trigger}}
       {{#popover.content}}
         Click again to hide.
       {{/popover.content}}
-      <div>
-        <button class="btn btn-info" {{action show}}>
-          Clicking This Button
-          <br/>
-          Will Show The Popover
-        </button>
+      <div class="form-group">
+        <div class="btn-group">
+          <button class="btn btn-default" {{action hide}}>
+            Hide
+          </button>
+          <button class="btn btn-default" {{action show}}>
+            Show
+          </button>
+          <button class="btn btn-default" {{action toggle}}>
+            Toggle
+          </button>
+        </div>
       </div>
     {{/twbs-popover}}
+  </div>
+  <div class="col-sm-8">
+    {{!-- @formatter:off --}}
+<pre>
+</pre>
+      {{!-- @formatter:on --}}
+  </div>
+</div>
+
+<h3>Responding To Popover Events</h3>
+
+<div class="row">
+  <div class="col-sm-4 form-group">
+    {{#twbs-popover popoverTrigger="click" onShow=(action "onShow") onShown=(action "onShown") onHide=(action "onHide")
+                    onHidden=(action "onHidden") onInserted=(action "onInserted") as |popover|}}
+      {{#popover.trigger}}
+        <button class="btn btn-default">Click this button</button>
+      {{/popover.trigger}}
+      {{#popover.content}}
+        Click again to hide.
+      {{/popover.content}}
+    {{/twbs-popover}}
+    <ul class="list-unstyled">
+      <li><span class="label label-default label-show">Show</span></li>
+      <li><span class="label label-default label-shown">Shown</span></li>
+      <li><span class="label label-default label-hide">Hide</span></li>
+      <li><span class="label label-default label-hidden">Hidden</span></li>
+      <li><span class="label label-default label-inserted">Inserted</span></li>
+    </ul>
+    <div class="panel panel-info">
+      Use <a href="http://jsfiddle.net/tw16/JfK6N/">http://jsfiddle.net/tw16/JfK6N/</a> transition for classes
+    </div>
   </div>
   <div class="col-sm-8">
     {{!-- @formatter:off --}}

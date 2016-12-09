@@ -8,11 +8,11 @@ export default Ember.Component.extend({
    * Call the closure action passed to the `registerContent` property.  Invoking this closure should set the content
    * section of the popover.
    */
-  _registerContent: Ember.on('didInsertElement', function () {
-    if (Ember.isPresent(this.get('registerContent'))) {
-      this.get('registerContent')(this.$().html());
+  _register: Ember.on('didInsertElement', function () {
+    if (Ember.isPresent(this.get('register'))) {
+      this.get('register')(this.$().html());
     } else {
-      Ember.Logger.warn('The `twbs-popover.content` component should have an action assigned to its `registerContent` property.');
+      Ember.Logger.warn('The `twbs-popover.content` component should have an action assigned to its `register` property.');
     }
   })
 });

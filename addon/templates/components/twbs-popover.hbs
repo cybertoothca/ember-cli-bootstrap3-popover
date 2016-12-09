@@ -1,8 +1,10 @@
 {{yield
   (hash
-    trigger=(component "twbs-popover.trigger")
-    content=(component "twbs-popover.content" registerContent=(action "setPopoverContent"))
-    title=(component "twbs-popover.title" registerTitle=(action "setPopoverTitle"))
+    trigger=(component "twbs-popover.trigger" register=(action "setTriggerElement"))
+    content=(component "twbs-popover.content" register=(action "setPopoverContent"))
+    title=(component "twbs-popover.title" register=(action "setPopoverTitle"))
   )
+  (action "hide")
   (action "show")
+  (action "toggle")
 }}

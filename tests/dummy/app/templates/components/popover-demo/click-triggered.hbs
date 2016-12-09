@@ -1,7 +1,7 @@
 <h3>Click Triggered Popover</h3>
 
 <div class="row">
-  <div class="col-sm-4">
+  <div class="col-sm-4 form-group">
     {{#twbs-popover content="Click again to hide." as |popover|}}
       {{#popover.trigger}}
         Click this text.
@@ -20,11 +20,13 @@
   </div>
 </div>
 
+<hr/>
+
 <div class="row">
-  <div class="col-sm-4">
+  <div class="col-sm-4 form-group">
     {{#twbs-popover content="Click again to hide." as |popover|}}
       {{#popover.trigger}}
-        <a href="javascript:void(0)">Click this anchor</a>
+        <a href="javascript:void(0)">Click this anchor.</a>
       {{/popover.trigger}}
     {{/twbs-popover}}
   </div>
@@ -36,8 +38,10 @@
   </div>
 </div>
 
+<hr/>
+
 <div class="row">
-  <div class="col-sm-4">
+  <div class="col-sm-4 form-group">
     {{#twbs-popover title="Popover Title" content="Click again to hide." as |popover|}}
       {{#popover.trigger}}
         <a href="javascript:void(0)">Click this anchor, check out the title.</a>
@@ -52,8 +56,10 @@
   </div>
 </div>
 
+<hr/>
+
 <div class="row">
-  <div class="col-sm-4">
+  <div class="col-sm-4 form-group">
     {{#twbs-popover content="Click again to hide." as |popover|}}
       {{#popover.trigger}}
         <button class="btn btn-default">Click this button</button>

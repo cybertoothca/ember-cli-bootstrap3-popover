@@ -11,7 +11,7 @@ export default Ember.Component.extend(Popover, {
      * @see http://getbootstrap.com/javascript/#popovers-methods
      */
     hide() {
-      this.$().popover('hide');
+      this.get('_$triggerElement').popover('hide');
     },
     /**
      * Sets the `content` property to the supplied value.  If you are supplying html to the content section, you
@@ -30,17 +30,23 @@ export default Ember.Component.extend(Popover, {
       this.set('title', title);
     },
     /**
+     *
+     * @param $element
+     */
+    setTriggerElement($element) {
+      this.set('_$triggerElement', $element);
+    },
+    /**
      * @see http://getbootstrap.com/javascript/#popovers-methods
      */
     show() {
-      Ember.Logger.info('SHOWing!!!');
-      this.$().popover('show');
+      this.get('_$triggerElement').popover('show');
     },
     /**
      * @see http://getbootstrap.com/javascript/#popovers-methods
      */
     toggle() {
-      this.$().popover('toggle');
+      this.get('_$triggerElement').popover('toggle');
     }
   },
   attributeBindings: ['href', 'role', 'tabindex'],
@@ -52,12 +58,17 @@ export default Ember.Component.extend(Popover, {
   }),
   _initializePopover: Ember.on('didInsertElement', function () {
     const options = this.getOptions();
-    // if (this.$('.twbs-popover-title').length === 1) {
-    //   Ember.set(options, 'title', this.$('.twbs-popover-title').html());
-    // }
-    // if (this.$('.twbs-popover-content').length === 1) {
-    //   Ember.set(options, 'content', this.$('.twbs-popover-content').html());
-    // }
-    this.$('.twbs-popover-trigger').popover(options);
-  })
+    this.get('_$triggerElement')
+      .popover(options)
+      .on('show.bs.popover', this.get('onShow'))
+      .on('shown.bs.popover', this.get('onShown'))
+      .on('hide.bs.popover', this.get('onHide'))
+      .on('hidden.bs.popover', this.get('onHidden'))
+      .on('inserted.bs.popover', this.get('onInserted'));
+  }),
+  /**
+   * The element that the `popover` is attached to.  Usually a link or a button.
+   * This is set via the `setTriggerElement` action above.
+   */
+  _$triggerElement: undefined
 });

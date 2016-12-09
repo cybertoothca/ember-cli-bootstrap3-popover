@@ -8,11 +8,11 @@ export default Ember.Component.extend({
    * Call the closure action passed to the `registerTitle` property.  Invoking this closure should set the title
    * section of the popover.
    */
-  _registerTitle: Ember.on('didInsertElement', function () {
-    if (Ember.isPresent(this.get('registerTitle'))) {
-      this.get('registerTitle')(this.$().html());
+  _register: Ember.on('didInsertElement', function () {
+    if (Ember.isPresent(this.get('register'))) {
+      this.get('register')(this.$().html());
     } else {
-      Ember.Logger.warn('The `twbs-popover.title` component should have an action assigned to its `registerTitle` property.');
+      Ember.Logger.warn('The `twbs-popover.title` component should have an action assigned to its `register` property.');
     }
   })
 });
