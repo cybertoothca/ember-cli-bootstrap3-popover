@@ -5,127 +5,127 @@ moduleForComponent('twbs-popover', 'Integration | Component | twbs popover', {
   integration: true
 });
 
-test('when clicking the link the popover has the nested `twbs-popover.title`', function(assert) {
+// TODO: this should be moved into an integration test to capitalize on the andThen helper
+test('when manually triggering show', function (assert) {
+  this.render(hbs`
+    {{#twbs-popover popoverTrigger="manual" title="Popover Title" as |po hide show toggle|}}
+      {{#po.trigger}}Clickable Text{{/po.trigger}}
+      <button class="btn-show" {{action show}}>Manual Show</button>
+      <button class="btn-hide" {{action hide}}>Manual Hide</button>
+    {{/twbs-popover}}
+  `);
+
+  assert.equal(this.$('.popover-title').length, 0);
+
+  this.$('.btn-show').click();
+  assert.equal(this.$('.popover-title').html(), 'Popover Title');
+});
+
+// TODO: this should be moved into an integration test to capitalize on the andThen helper
+test('when hooking into the Bootstrap popover events', function (assert) {
+  let isShow = false, isShown = false, isHide = false, isHidden = false, isInserted = false;
+  this.setProperties({
+    onShow: function () {
+      isShow = true;
+    },
+    onShown: function () {
+      isShown = true;
+    },
+    onHide: function () {
+      isHide = true;
+    },
+    onHidden: function () {
+      isHidden = true;
+    },
+    onInserted: function () {
+      isInserted = true;
+    },
+  });
+
+  this.render(hbs`
+    {{#twbs-popover title="Popover Title" delay=0 onShow=(action onShow) onShown=(action onShown) onHide=(action onHide) onHidden=(action onHidden) onInserted=(action onInserted) as |po|}}
+      {{#po.trigger}}Clickable Text{{/po.trigger}}
+    {{/twbs-popover}}
+  `);
+
+  assert.notOk(isShow, 'show.bs.popover HAS NOT YET fired.');
+  assert.notOk(isShown, 'shown.bs.popover HAS NOT YET fired.');
+  assert.notOk(isHide, 'hide.bs.popover HAS NOT YET fired.');
+  assert.notOk(isHidden, 'hidden.bs.popover HAS NOT YET fired.');
+  assert.notOk(isInserted, 'hidden.bs.popover HAS NOT YET fired.');
+
+  this.$('.twbs-popover-trigger').click();
+
+  assert.ok(isShow, 'show.bs.popover fired.');
+  assert.notOk(isShown, 'shown.bs.popover HAS NOT YET fired.');
+  assert.notOk(isHide, 'hide.bs.popover HAS NOT YET fired.');
+  assert.notOk(isHidden, 'hidden.bs.popover HAS NOT YET fired.');
+  assert.ok(isInserted, 'inserted.bs.popover fired.');
+});
+
+test('when clicking the link the popover has the nested `twbs-popover.title`', function (assert) {
   this.render(hbs`
     {{#twbs-popover html?=true as |po|}}
-      Link Text
+      {{#po.trigger}}Clickable Text{{/po.trigger}}
       {{#po.title}}<h1>Heading One</h1>{{/po.title}}
     {{/twbs-popover}}
   `);
 
-  this.$('a').click();
+  this.$('.twbs-popover-trigger').click();
   assert.equal(this.$('.popover-title').html().trim(), '<h1>Heading One</h1>');
 });
 
-test('when clicking the link the popover has the nested `twbs-popover.content`', function(assert) {
+test('when clicking the link the popover has the property-based `twbs-popover.title`', function (assert) {
+  this.render(hbs`
+    {{#twbs-popover html?=true title="<h1>Heading One</h1>" as |po|}}
+      {{#po.trigger}}Clickable Text{{/po.trigger}}
+    {{/twbs-popover}}
+  `);
+
+  this.$('.twbs-popover-trigger').click();
+  assert.equal(this.$('.popover-title').html().trim(), '<h1>Heading One</h1>');
+});
+
+test('when clicking the link the popover has the nested `twbs-popover.content`', function (assert) {
   this.render(hbs`
     {{#twbs-popover html?=true as |po|}}
-      Link Text
+      {{#po.trigger}}Clickable Text{{/po.trigger}}
       {{#po.content}}<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>{{/po.content}}
     {{/twbs-popover}}
   `);
 
-  this.$('a').click();
+  this.$('.twbs-popover-trigger').click();
   assert.equal(this.$('.popover-content').html().trim(),
     '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>');
 });
 
-test('when passing a block it is used as the anchor text', function (assert) {
-  // Template block usage:
+test('when clicking the link the popover has the property-based `twbs-popover.content`', function (assert) {
   this.render(hbs`
-    {{#twbs-popover}}
-      template block text
+    {{#twbs-popover html?=true content="<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>" as |po|}}
+      {{#po.trigger}}Clickable Text{{/po.trigger}}
     {{/twbs-popover}}
   `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  this.$('.twbs-popover-trigger').click();
+  assert.equal(this.$('.popover-content').html().trim(),
+    '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>');
 });
 
-test('when initialized the bootstrap popover is initialized', function (assert) {
-  // Template block usage:
+test('the bootstrap popover is initialized when the trigger is present', function (assert) {
   this.render(hbs`
-    {{#twbs-popover}}
-      template block text
+    {{#twbs-popover as |po|}}
+      {{#po.trigger}}Clickable Text{{/po.trigger}}
     {{/twbs-popover}}
   `);
-
-  assert.equal(this.$('a').attr('data-original-title'), '',
+  assert.equal(this.$('.twbs-popover-trigger').attr('data-original-title'), '',
     'Assuming the popover is activated because the `data-original-title` attribute is set');
 });
 
 test('has `twbs-popover` class', function (assert) {
-  // Template block usage:
   this.render(hbs`
     {{#twbs-popover}}
       template block text
     {{/twbs-popover}}
   `);
-
-  assert.ok(this.$('a').hasClass('twbs-popover'));
-});
-
-test('when the anchor is rendered the role defaults to javascript:void(0)', function (assert) {
-  // Template block usage:
-  this.render(hbs`
-    {{#twbs-popover}}
-      template block text
-    {{/twbs-popover}}
-  `);
-
-  assert.equal(this.$('a').attr('href'), 'javascript:void(0)'); // jshint ignore:line
-});
-
-test('when the anchor is rendered the role defaults to link', function (assert) {
-  // Template block usage:
-  this.render(hbs`
-    {{#twbs-popover}}
-      template block text
-    {{/twbs-popover}}
-  `);
-
-  assert.equal(this.$('a').attr('role'), 'link');
-});
-
-test('when the anchor is rendered the tabindex defaults to undefined', function (assert) {
-  // Template block usage:
-  this.render(hbs`
-    {{#twbs-popover}}
-      template block text
-    {{/twbs-popover}}
-  `);
-
-  assert.equal(this.$('a').attr('tabindex'), undefined);
-});
-
-test('when passing href it is appended as an attribute to the anchor', function (assert) {
-  // Template block usage:
-  this.render(hbs`
-    {{#twbs-popover href="someHref"}}
-      template block text
-    {{/twbs-popover}}
-  `);
-
-  assert.equal(this.$('a').attr('href'), 'someHref');
-});
-
-test('when passing role it is appended as an attribute to the anchor', function (assert) {
-  // Template block usage:
-  this.render(hbs`
-    {{#twbs-popover role="someRole"}}
-      template block text
-    {{/twbs-popover}}
-  `);
-
-  assert.equal(this.$('a').attr('role'), 'someRole');
-});
-
-test('when passing tabindex it is appended as an attribute to the anchor', function (assert) {
-  // Template block usage:
-  this.render(hbs`
-    {{#twbs-popover tabindex=1}}
-      template block text
-    {{/twbs-popover}}
-  `);
-
-  assert.equal(this.$('a').attr('tabindex'), 1);
+  assert.ok(this.$('span').hasClass('twbs-popover'));
 });

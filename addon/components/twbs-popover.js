@@ -49,22 +49,27 @@ export default Ember.Component.extend(Popover, {
       this.get('_$triggerElement').popover('toggle');
     }
   },
-  attributeBindings: ['href', 'role', 'tabindex'],
   classNames: ['twbs-popover'],
   layout,
   tagName: 'span',
   _destroyPopover: Ember.on('willDestroyElement', function () {
-    // this.$().popover('destroy');
+    if (Ember.isPresent(this.get('_$triggerElement'))) {
+      this.get('_$triggerElement').popover('destroy');
+    }
   }),
   _initializePopover: Ember.on('didInsertElement', function () {
     const options = this.getOptions();
-    this.get('_$triggerElement')
-      .popover(options)
-      .on('show.bs.popover', this.get('onShow'))
-      .on('shown.bs.popover', this.get('onShown'))
-      .on('hide.bs.popover', this.get('onHide'))
-      .on('hidden.bs.popover', this.get('onHidden'))
-      .on('inserted.bs.popover', this.get('onInserted'));
+    if (Ember.isPresent(this.get('_$triggerElement'))) {
+      this.get('_$triggerElement')
+        .popover(options)
+        .on('show.bs.popover', this.get('onShow'))
+        .on('shown.bs.popover', this.get('onShown'))
+        .on('hide.bs.popover', this.get('onHide'))
+        .on('hidden.bs.popover', this.get('onHidden'))
+        .on('inserted.bs.popover', this.get('onInserted'));
+    } else {
+      Ember.Logger.warn('The `twbs-popover` component expects to have a `twbs-popover.trigger` element registered with it.  Check out the demo application at http://ember-cli-bootstrap3-popover.cybertooth.io/');
+    }
   }),
   /**
    * The element that the `popover` is attached to.  Usually a link or a button.

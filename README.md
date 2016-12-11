@@ -68,7 +68,21 @@ The reason this addon requires **Ember-2.3.0+** is because this particular compo
 ##### Arguments
 
 * _All of the properties listed in the `Popover` mixin_.
+* `onShow` - the property that accepts an action closure hooked to the bootstrap `show.bs.popover` event.
+* `onShown` - the property that accepts an action closure hooked to the bootstrap `shown.bs.popover` event.
+* `onHide` - the property that accepts an action closure hooked to the bootstrap `hide.bs.popover` event.
+* `onHidden` - the property that accepts an action closure hooked to the bootstrap `hidden.bs.popover` event.
+* `onInserted` - the property that accepts an action closure hooked to the bootstrap `inserted.bs.popover` event.
 
+([Check out the demo...](http://ember-cli-bootstrap3-popover.cybertooth.io/))
+
+##### Actions
+
+The following popover methods are exposed as actions:
+
+* `hide` - triggers the hiding of a popover.
+* `show` - triggers the showing of a popover.
+* `toggle` - toggles a popover.
 
 #### `{{twbs-popover.content}}`
 

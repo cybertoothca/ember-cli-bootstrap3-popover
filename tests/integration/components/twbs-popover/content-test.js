@@ -5,6 +5,17 @@ moduleForComponent('twbs-popover/content', 'Integration | Component | twbs popov
   integration: true
 });
 
+test('when registering its html', function (assert) {
+  this.set('register', function (html) {
+    assert.equal(html.trim(), '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>',
+      'The html is passed into the register function.');
+  });
+  this.render(hbs`
+{{#twbs-popover/content register=register}}
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+{{/twbs-popover/content}}
+  `);
+});
 
 test('the content div-container is hidden', function (assert) {
   this.render(hbs`
