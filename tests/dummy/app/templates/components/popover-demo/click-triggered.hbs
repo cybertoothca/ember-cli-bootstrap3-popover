@@ -32,7 +32,11 @@
   </div>
   <div class="col-sm-8">
     {{!-- @formatter:off --}}
-<pre>
+<pre>\{{#twbs-popover content="Click again to hide." as |popover|}}
+  \{{#popover.trigger}}
+    &lt;a href="javascript:void(0)">Click this anchor.&lt;/a>
+  \{{/popover.trigger}}
+\{{/twbs-popover}}
 </pre>
       {{!-- @formatter:on --}}
   </div>
@@ -50,7 +54,11 @@
   </div>
   <div class="col-sm-8">
     {{!-- @formatter:off --}}
-<pre>
+<pre>\{{#twbs-popover title="Popover Title" content="Click again to hide." as |popover|}}
+  \{{#popover.trigger}}
+    &lt;a href="javascript:void(0)">Click this anchor, check out the title.&lt;/a>
+  \{{/popover.trigger}}
+\{{/twbs-popover}}
 </pre>
       {{!-- @formatter:on --}}
   </div>
@@ -68,7 +76,11 @@
   </div>
   <div class="col-sm-8">
     {{!-- @formatter:off --}}
-<pre>
+<pre>\{{#twbs-popover content="Click again to hide." as |popover|}}
+  \{{#popover.trigger}}
+    &lt;button class="btn btn-default">Click this button&lt;/button>
+  \{{/popover.trigger}}
+\{{/twbs-popover}}
 </pre>
       {{!-- @formatter:on --}}
   </div>

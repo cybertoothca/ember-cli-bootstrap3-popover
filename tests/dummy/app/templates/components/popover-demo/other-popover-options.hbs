@@ -1,6 +1,351 @@
 <h3>Other Popover Options</h3>
 
-<h4><code>animation?</code></h4>
+<h4><code>animation?=false</code></h4>
+<div class="row">
+  <div class="col-sm-4 form-group">
+    {{#twbs-popover animation?=false as |popover|}}
+      {{#popover.trigger}}
+        <button class="btn btn-default">Click This Button</button>
+      {{/popover.trigger}}
+      {{#popover.content}}
+        Click again to hide.
+      {{/popover.content}}
+    {{/twbs-popover}}
+  </div>
+  <div class="col-sm-8">
+    {{!-- @formatter:off --}}
+<pre>\{{#twbs-popover animation?=false as |popover|}}
+  \{{#popover.trigger}}
+    &lt;button class="btn btn-default">Click This Button&lt;/button>
+  \{{/popover.trigger}}
+  \{{#popover.content}}
+    Click again to hide.
+  \{{/popover.content}}
+\{{/twbs-popover}}
+</pre>
+      {{!-- @formatter:on --}}
+  </div>
+</div>
+
+<h4><code>animation?=true</code> (DEFAULT)</h4>
+<div class="row">
+  <div class="col-sm-4 form-group">
+    {{#twbs-popover animation?=true as |popover|}}
+      {{#popover.trigger}}
+        <button class="btn btn-default">Click This Button</button>
+      {{/popover.trigger}}
+      {{#popover.content}}
+        Click again to hide.
+      {{/popover.content}}
+    {{/twbs-popover}}
+  </div>
+  <div class="col-sm-8">
+    {{!-- @formatter:off --}}
+<pre>\{{#twbs-popover animation?=true as |popover|}}
+  \{{#popover.trigger}}
+    &lt;button class="btn btn-default">Click This Button&lt;/button>
+  \{{/popover.trigger}}
+  \{{#popover.content}}
+    Click again to hide.
+  \{{/popover.content}}
+\{{/twbs-popover}}
+</pre>
+      {{!-- @formatter:on --}}
+  </div>
+</div>
+
+<h4><code>content</code> (property)</h4>
+<div class="row">
+  <div class="col-sm-4 form-group">
+    {{#twbs-popover content="Click again to hide." as |popover|}}
+      {{#popover.trigger}}
+        <button class="btn btn-default">Click This Button</button>
+      {{/popover.trigger}}
+    {{/twbs-popover}}
+  </div>
+  <div class="col-sm-8">
+    {{!-- @formatter:off --}}
+<pre>\{{#twbs-popover content="Click again to hide." as |popover|}}
+  \{{#popover.trigger}}
+    &lt;button class="btn btn-default">Click This Button&lt;/button>
+  \{{/popover.trigger}}
+\{{/twbs-popover}}
+</pre>
+      {{!-- @formatter:on --}}
+  </div>
+</div>
+
+<h4><code>content</code> (block)</h4>
+<div class="row">
+  <div class="col-sm-4 form-group">
+    {{#twbs-popover as |popover|}}
+      {{#popover.trigger}}
+        <button class="btn btn-default">Click This Button</button>
+      {{/popover.trigger}}
+      {{#popover.content}}
+        Click again to hide.
+      {{/popover.content}}
+    {{/twbs-popover}}
+  </div>
+  <div class="col-sm-8">
+    {{!-- @formatter:off --}}
+<pre>\{{#twbs-popover as |popover|}}
+  \{{#popover.trigger}}
+    &lt;button class="btn btn-default">Click This Button&lt;/button>
+  \{{/popover.trigger}}
+  \{{#popover.content}}
+    Click again to hide.
+  \{{/popover.content}}
+\{{/twbs-popover}}
+</pre>
+      {{!-- @formatter:on --}}
+  </div>
+</div>
+
 <h4><code>delay</code></h4>
-<h4><code>html?</code></h4>
-<h4><code>placement</code></h4>
+<div class="row">
+  <div class="col-sm-4 form-group">
+    {{#twbs-popover delay=1500 as |popover|}}
+      {{#popover.trigger}}
+        <button class="btn btn-default">Click This Button</button>
+      {{/popover.trigger}}
+      {{#popover.content}}
+        Click again to hide.
+      {{/popover.content}}
+    {{/twbs-popover}}
+  </div>
+  <div class="col-sm-8">
+    {{!-- @formatter:off --}}
+<pre>\{{#twbs-popover delay=1500 as |popover|}}
+  \{{#popover.trigger}}
+    &lt;button class="btn btn-default">Click This Button&lt;/button>
+  \{{/popover.trigger}}
+  \{{#popover.content}}
+    Click again to hide.
+  \{{/popover.content}}
+\{{/twbs-popover}}
+</pre>
+      {{!-- @formatter:on --}}
+  </div>
+</div>
+
+<h4><code>html?=false</code> (DEFAULT)</h4>
+<div class="row">
+  <div class="col-sm-4 form-group">
+    {{#twbs-popover html?=false as |popover|}}
+      {{#popover.trigger}}
+        <button class="btn btn-default">Click This Button</button>
+      {{/popover.trigger}}
+      {{#popover.content}}
+        <p>This is treated as plain-text.</p>
+      {{/popover.content}}
+    {{/twbs-popover}}
+  </div>
+  <div class="col-sm-8">
+    {{!-- @formatter:off --}}
+<pre>\{{#twbs-popover html?=false as |popover|}}
+  \{{#popover.trigger}}
+    &lt;button class="btn btn-default">Click This Button&lt;/button>
+  \{{/popover.trigger}}
+  \{{#popover.content}}
+    &lt;p>This is treated as plain-text.&lt;/p>
+  \{{/popover.content}}
+\{{/twbs-popover}}
+</pre>
+      {{!-- @formatter:on --}}
+  </div>
+</div>
+
+<h4><code>html?=true</code></h4>
+<div class="row">
+  <div class="col-sm-4 form-group">
+    {{#twbs-popover html?=true as |popover|}}
+      {{#popover.trigger}}
+        <button class="btn btn-default">Click This Button</button>
+      {{/popover.trigger}}
+      {{#popover.content}}
+        <p>This is treated as <strong>html</strong>.</p>
+      {{/popover.content}}
+    {{/twbs-popover}}
+  </div>
+  <div class="col-sm-8">
+    {{!-- @formatter:off --}}
+<pre>\{{#twbs-popover html?=true as |popover|}}
+  \{{#popover.trigger}}
+    &lt;button class="btn btn-default">Click This Button&lt;/button>
+  \{{/popover.trigger}}
+  \{{#popover.content}}
+    &lt;p>This is treated as &lt;strong>html&lt;/strong>.&lt;/p>
+  \{{/popover.content}}
+\{{/twbs-popover}}
+</pre>
+      {{!-- @formatter:on --}}
+  </div>
+</div>
+<h4><code>placement="right"</code> (DEFAULT)</h4>
+<div class="row">
+  <div class="col-sm-4 form-group">
+    {{#twbs-popover placement="right" as |popover|}}
+      {{#popover.trigger}}
+        <button class="btn btn-default">Click This Button</button>
+      {{/popover.trigger}}
+      {{#popover.content}}
+        Click again to hide.
+      {{/popover.content}}
+    {{/twbs-popover}}
+  </div>
+  <div class="col-sm-8">
+    {{!-- @formatter:off --}}
+<pre>\{{#twbs-popover placement="right" as |popover|}}
+  \{{#popover.trigger}}
+    &lt;button class="btn btn-default">Click This Button&lt;/button>
+  \{{/popover.trigger}}
+  \{{#popover.content}}
+    Click again to hide.
+  \{{/popover.content}}
+\{{/twbs-popover}}
+</pre>
+      {{!-- @formatter:on --}}
+  </div>
+</div>
+
+<h4><code>placement="bottom"</code></h4>
+<div class="row">
+  <div class="col-sm-4 form-group">
+    {{#twbs-popover placement="bottom" as |popover|}}
+      {{#popover.trigger}}
+        <button class="btn btn-default">Click This Button</button>
+      {{/popover.trigger}}
+      {{#popover.content}}
+        Click again to hide.
+      {{/popover.content}}
+    {{/twbs-popover}}
+  </div>
+  <div class="col-sm-8">
+    {{!-- @formatter:off --}}
+<pre>\{{#twbs-popover placement="bottom" as |popover|}}
+  \{{#popover.trigger}}
+    &lt;button class="btn btn-default">Click This Button&lt;/button>
+  \{{/popover.trigger}}
+  \{{#popover.content}}
+    Click again to hide.
+  \{{/popover.content}}
+\{{/twbs-popover}}
+</pre>
+      {{!-- @formatter:on --}}
+  </div>
+</div>
+
+<h4><code>placement="left"</code></h4>
+<div class="row">
+  <div class="col-sm-4 form-group">
+    {{#twbs-popover placement="left" as |popover|}}
+      {{#popover.trigger}}
+        <button class="btn btn-default">Click This Button</button>
+      {{/popover.trigger}}
+      {{#popover.content}}
+        Click again to hide.
+      {{/popover.content}}
+    {{/twbs-popover}}
+  </div>
+  <div class="col-sm-8">
+    {{!-- @formatter:off --}}
+<pre>\{{#twbs-popover placement="left" as |popover|}}
+  \{{#popover.trigger}}
+    &lt;button class="btn btn-default">Click This Button&lt;/button>
+  \{{/popover.trigger}}
+  \{{#popover.content}}
+    Click again to hide.
+  \{{/popover.content}}
+\{{/twbs-popover}}
+</pre>
+      {{!-- @formatter:on --}}
+  </div>
+</div>
+
+<h4><code>placement="top"</code></h4>
+<div class="row">
+  <div class="col-sm-4 form-group">
+    {{#twbs-popover placement="top" as |popover|}}
+      {{#popover.trigger}}
+        <button class="btn btn-default">Click This Button</button>
+      {{/popover.trigger}}
+      {{#popover.content}}
+        Click again to hide.
+      {{/popover.content}}
+    {{/twbs-popover}}
+  </div>
+  <div class="col-sm-8">
+    {{!-- @formatter:off --}}
+<pre>\{{#twbs-popover placement="top" as |popover|}}
+  \{{#popover.trigger}}
+    &lt;button class="btn btn-default">Click This Button&lt;/button>
+  \{{/popover.trigger}}
+  \{{#popover.content}}
+    Click again to hide.
+  \{{/popover.content}}
+\{{/twbs-popover}}
+</pre>
+      {{!-- @formatter:on --}}
+  </div>
+</div>
+
+<h4><code>title</code> (property)</h4>
+<div class="row">
+  <div class="col-sm-4 form-group">
+    {{#twbs-popover title="Title Property" as |popover|}}
+      {{#popover.trigger}}
+        <button class="btn btn-default">Click This Button</button>
+      {{/popover.trigger}}
+      {{#popover.content}}
+        Click again to hide.
+      {{/popover.content}}
+    {{/twbs-popover}}
+  </div>
+  <div class="col-sm-8">
+    {{!-- @formatter:off --}}
+<pre>\{{#twbs-popover title="Title Property" as |popover|}}
+  \{{#popover.trigger}}
+    &lt;button class="btn btn-default">Click This Button&lt;/button>
+  \{{/popover.trigger}}
+  \{{#popover.content}}
+    Click again to hide.
+  \{{/popover.content}}
+\{{/twbs-popover}}
+</pre>
+      {{!-- @formatter:on --}}
+  </div>
+</div>
+
+<h4><code>title</code> (block)</h4>
+<div class="row">
+  <div class="col-sm-4 form-group">
+    {{#twbs-popover as |popover|}}
+      {{#popover.trigger}}
+        <button class="btn btn-default">Click This Button</button>
+      {{/popover.trigger}}
+      {{#popover.title}}
+        Title Block
+      {{/popover.title}}
+      {{#popover.content}}
+        Click again to hide.
+      {{/popover.content}}
+    {{/twbs-popover}}
+  </div>
+  <div class="col-sm-8">
+    {{!-- @formatter:off --}}
+<pre>\{{#twbs-popover as |popover|}}
+  \{{#popover.trigger}}
+    &lt;button class="btn btn-default">Click This Button&lt;/button>
+  \{{/popover.trigger}}
+  \{{#popover.title}}
+    Title Block
+  \{{/popover.title}}
+  \{{#popover.content}}
+    Click again to hide.
+  \{{/popover.content}}
+\{{/twbs-popover}}
+</pre>
+      {{!-- @formatter:on --}}
+  </div>
+</div>

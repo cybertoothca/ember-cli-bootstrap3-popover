@@ -10,7 +10,11 @@
   </div>
   <div class="col-sm-8">
     {{!-- @formatter:off --}}
-<pre>
+<pre>\{{#twbs-popover content="Mouse out of text to hide" popoverTrigger="hover" as |popover|}}
+  \{{#popover.trigger}}
+    Hover over this text for the popover.
+  \{{/popover.trigger}}
+\{{/twbs-popover}}
 </pre>
       {{!-- @formatter:on --}}
   </div>
