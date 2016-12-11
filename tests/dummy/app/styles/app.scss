@@ -4,12 +4,15 @@ $font-family-base: lato, "Helvetica Neue", Helvetica, Arial, sans-serif !default
 $headings-font-family: Raleway, $font-family-base;
 
 //noinspection CssUnknownTarget
+@import "ember-cli-font-awesome-sass";
+//noinspection CssUnknownTarget
 @import 'ember-cli-bootstrap3-sass';
 //noinspection CssUnknownTarget
 @import 'ember-cli-bootstrap3-theme';
 
 body {
-  margin-bottom: 100%;
+  padding-top: 50px;
+  margin-bottom: 50%;
 }
 
 h3 {
