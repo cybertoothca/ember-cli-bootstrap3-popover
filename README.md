@@ -195,7 +195,7 @@ command (that can be run anywhere):
 `npm uninstall -g ember-cli-bootstrap3-popover`
 1. Remove the reference to the `ember-cli-bootstrap3-popover`
 in your _other_ project's `package.json`.
-1. Run an `npm prune` from the root of your _other_ project's command line.
+1. Run an `npm prune` and `bower prune` from the root of your _other_ project's command line.
 
 # Deploying The Dummy Application
 
