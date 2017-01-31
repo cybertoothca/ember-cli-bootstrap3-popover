@@ -6,8 +6,8 @@ moduleForComponent('twbs-popover/content', 'Integration | Component | twbs popov
 });
 
 test('when registering its html', function (assert) {
-  this.set('register', function (html) {
-    assert.equal(html.trim(), '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>',
+  this.set('register', function ($html) {
+    assert.equal($html.html().trim(), '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>',
       'The html is passed into the register function.');
   });
   this.render(hbs`

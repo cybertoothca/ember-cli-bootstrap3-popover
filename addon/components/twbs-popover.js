@@ -14,19 +14,19 @@ export default Ember.Component.extend(Popover, {
       this.get('_$triggerElement').popover('hide');
     },
     /**
-     * Sets the `content` property to the supplied value.  If you are supplying html to the content section, you
-     * must make sure that the `html?` property is set to true.
-     * @param content the content for the popover.  Can be plain-text or html.
+     * Sets the `content` property to the supplied value and the `html?` property to `true`.
+     * @param content the content for the popover.  Will be rendered as html.
      */
     setPopoverContent(content) {
+      this.set('html?', true);
       this.set('content', content);
     },
     /**
-     * Sets the `title` property to the supplied value.  If you are supplying html to the title section, you must make
-     * sure that the `html?` property is set to true.
-     * @param title the title for the popover.  Can be plain-text or html.
+     * Sets the `title` property to the supplied value and the `html?` property to `true`.
+     * @param title the title for the popover.  Will be rendered as html.
      */
     setPopoverTitle(title) {
+      this.set('html?', true);
       this.set('title', title);
     },
     /**
@@ -53,6 +53,7 @@ export default Ember.Component.extend(Popover, {
   layout,
   tagName: 'span',
   _destroyPopover: Ember.on('willDestroyElement', function () {
+    Ember.Logger.info('DESTROYING?');
     if (Ember.isPresent(this.get('_$triggerElement'))) {
       this.get('_$triggerElement').popover('destroy');
     }

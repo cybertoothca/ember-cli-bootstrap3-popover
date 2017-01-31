@@ -6,19 +6,8 @@ moduleForComponent('twbs-popover/title', 'Integration | Component | twbs popover
 });
 
 test('when registering its html', function (assert) {
-  this.set('register', function (html) {
-    assert.equal(html.trim(), '<h1>Heading One</h1>', 'The html is passed into the register function.');
-  });
-  this.render(hbs`
-{{#twbs-popover/title register=register}}
-  <h1>Heading One</h1>
-{{/twbs-popover/title}}
-  `);
-});
-
-test('when registering its html', function (assert) {
-  this.set('register', function (html) {
-    assert.equal(html.trim(), '<h1>Heading One</h1>', 'The html is passed into the register function.');
+  this.set('register', function ($html) {
+    assert.equal($html.html().trim(), '<h1>Heading One</h1>', 'The html is passed into the register function.');
   });
   this.render(hbs`
 {{#twbs-popover/title register=register}}

@@ -72,7 +72,7 @@ test('when clicking the link the popover has the nested `twbs-popover.title`', f
   `);
 
   this.$('.twbs-popover-trigger').click();
-  assert.equal(this.$('.popover-title').html().trim(), '<h1>Heading One</h1>');
+  assert.equal(this.$('.popover-title').html().trim(), '<div class=\"twbs-popover-title\"><h1>Heading One</h1></div>');
 });
 
 test('when clicking the link the popover has the property-based `twbs-popover.title`', function (assert) {
@@ -96,7 +96,7 @@ test('when clicking the link the popover has the nested `twbs-popover.content`',
 
   this.$('.twbs-popover-trigger').click();
   assert.equal(this.$('.popover-content').html().trim(),
-    '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>');
+    '<div class=\"twbs-popover-content\"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p></div>');
 });
 
 test('when clicking the link the popover has the property-based `twbs-popover.content`', function (assert) {
