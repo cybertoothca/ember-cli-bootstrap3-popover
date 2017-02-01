@@ -109,7 +109,7 @@ export default Ember.Mixin.create({
   _delayComputed: Ember.computed('delay', 'delayHide', 'delayShow', function () {
     const delayObject = {
       hide: this.get('delay'),
-      show: this.get('delay'),
+      show: this.get('delay')
     };
 
     if (Ember.isPresent(this.get('delayHide'))) {
