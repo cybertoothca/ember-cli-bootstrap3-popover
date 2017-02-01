@@ -26,6 +26,14 @@ export default Ember.Mixin.create({
    */
   delay: 0,
   /**
+   * Delay hiding the popover (ms) - does not apply to manual trigger type.
+   */
+  delayHide: undefined,
+  /**
+   * Delay showing the popover (ms) - does not apply to manual trigger type.
+   */
+  delayShow: undefined,
+  /**
    * Insert HTML into the popover. If false, jQuery's text method will be used to insert content into
    * the DOM. Use text if you're worried about XSS attacks.
    */
@@ -84,10 +92,34 @@ export default Ember.Mixin.create({
    */
   getOptions() {
     const hash =
-      this.getProperties('animation', 'content', 'delay', 'html', 'placement', 'selector', 'title');
+      this.getProperties('animation', 'content', 'html', 'placement', 'selector', 'title');
     hash.container = this.get('popoverContainer');
+    hash.delay = this.get('_delayComputed');
     hash.template = this.get('popoverTemplate');
     hash.trigger = this.get('popoverTrigger');
+    Ember.Logger.info(hash);
     return hash;
-  }
+  },
+  /**
+   * If a number is supplied, delay is applied to both hide/show.
+   *
+   * Object structure is: `delay: { "show": 500, "hide": 100 }`.
+   * @private
+   */
+  _delayComputed: Ember.computed('delay', 'delayHide', 'delayShow', function () {
+    const delayObject = {
+      hide: this.get('delay'),
+      show: this.get('delay'),
+    };
+
+    if (Ember.isPresent(this.get('delayHide'))) {
+      Ember.set(delayObject, 'hide', this.get('delayHide'));
+    }
+
+    if (Ember.isPresent(this.get('delayShow'))) {
+      Ember.set(delayObject, 'show', this.get('delayShow'));
+    }
+
+    return delayObject;
+  })
 });

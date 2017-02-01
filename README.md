@@ -65,6 +65,8 @@ A component that contains all of the markup associated with the popover.  You ca
 
 The reason this addon requires **Ember-2.3.0+** is because this particular component uses the _hash_ helper.
 
+**Be aware that when you nest either the content or title it will be automatically treated as html.** 
+
 ##### Arguments
 
 * _All of the properties listed in the `Popover` mixin_.
@@ -126,6 +128,8 @@ here: [http://getbootstrap.com/javascript/#popovers-options](http://getbootstrap
 * `animation?` (aliased to `animation`)- **Default** `true`
 * `content` - **Default** `''`
 * `delay` - **Default** `0`
+* `delayHide` - **Default** `undefined`
+* `delayShow` - **Default** `undefined`
 * `html?` (aliased to `html`) - **Default** `false`
 * `placement` - **Default** `'right'`
 * `popoverContainer` - **Default** `false`
