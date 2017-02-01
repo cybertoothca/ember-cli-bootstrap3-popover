@@ -53,7 +53,6 @@ export default Ember.Component.extend(Popover, {
   layout,
   tagName: 'span',
   _destroyPopover: Ember.on('willDestroyElement', function () {
-    Ember.Logger.info('DESTROYING?');
     if (Ember.isPresent(this.get('_$triggerElement'))) {
       this.get('_$triggerElement').popover('destroy');
     }
