@@ -97,7 +97,6 @@ export default Ember.Mixin.create({
     hash.delay = this.get('_delayComputed');
     hash.template = this.get('popoverTemplate');
     hash.trigger = this.get('popoverTrigger');
-    Ember.Logger.info(hash);
     return hash;
   },
   /**
