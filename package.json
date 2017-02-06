@@ -18,7 +18,14 @@
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "Cybertooth.io",
+  "contributors": [
+    {
+      "name": "Dan Nelson",
+      "email": "dnelson@cybertooth.ca",
+      "url": "https://github.com/nadnoslen"
+    }
+  ],
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.2",

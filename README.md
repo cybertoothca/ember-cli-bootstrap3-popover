@@ -14,11 +14,11 @@ The demonstration web application can be found here:
 This addon supplies the following _components_:
 
 * `twbs-popover` - a container-like element for the popover's markup, options, methods, and events.
-* `twbs-popover.content` - a component you nest inside a `twbs-popover` that will generate
+* `twbs-popover/content` - a component you nest inside a `twbs-popover` that will generate
 the _content_ for the popover.
-* `twbs-popover.title` - a component you nest inside a `twbs-popover` that will generate
+* `twbs-popover/title` - a component you nest inside a `twbs-popover` that will generate
 the _title_ for the popover.
-* `twbs-popover.trigger` - the component you nest inside a `twbs-popover` that acts as the bound element for the 
+* `twbs-popover/trigger` - the component you nest inside a `twbs-popover` that acts as the bound element for the 
 popover and in normal trigger events will accept clicks, hovering, and focus events to toggle the popover. 
 
 The following _mixin_ also ships with this addon:
@@ -86,7 +86,7 @@ The following popover methods are exposed as actions:
 * `show` - triggers the showing of a popover.
 * `toggle` - toggles a popover.
 
-#### `{{twbs-popover.content}}`
+#### `{{twbs-popover/content}}`
 
 A component that nests inside of a `{{#twbs-popover}}` and generates the content for a popover via its block.
 This component promotes the easy re-use of existing components inside the popover content and encourages readable html.
@@ -95,7 +95,7 @@ This component promotes the easy re-use of existing components inside the popove
 
 * _None_.
 
-#### `{{twbs-popover.title}}`
+#### `{{twbs-popover/title}}`
 
 A component that nests inside of a `{{#twbs-popover}}` and generates the title for a popover via its block.
 This component promotes the easy re-use of existing components inside the popover title and encourages readable html.
@@ -104,7 +104,7 @@ This component promotes the easy re-use of existing components inside the popove
 
 * _None_.
 
-#### `{{twbs-popover.trigger}}`
+#### `{{twbs-popover/trigger}}`
 
 A component that nests inside of a `{{#twbs-popover}}` and generates the html element that the popover is bound to.
 When the popover is initialized, the markup inside this component becomes the popover.
