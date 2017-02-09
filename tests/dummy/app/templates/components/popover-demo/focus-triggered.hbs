@@ -5,21 +5,21 @@
     <p>
       {{#twbs-popover content="Click elsewhere to close this popover." popoverTrigger="focus" as |popover|}}
         {{#popover.trigger}}
-          <a href="javascript:void(0)" role="button">Click to gain focus.</a>
+          <a href="javascript:void(0)" role="button" tabindex="1">Click to gain focus.</a>
         {{/popover.trigger}}
       {{/twbs-popover}}
     </p>
     <p>
       {{#twbs-popover content="Click elsewhere to close this popover." popoverTrigger="focus" as |popover|}}
         {{#popover.trigger}}
-          <a href="javascript:void(0)" role="button">Click to gain focus.</a>
+          <a href="javascript:void(0)" role="button" tabindex="2">Click to gain focus.</a>
         {{/popover.trigger}}
       {{/twbs-popover}}
     </p>
     <p>
       {{#twbs-popover content="Click elsewhere to close this popover." popoverTrigger="focus" as |popover|}}
         {{#popover.trigger}}
-          <a href="javascript:void(0)" role="button">Click to gain focus.</a>
+          <a href="javascript:void(0)" role="button" tabindex="3">Click to gain focus.</a>
         {{/popover.trigger}}
       {{/twbs-popover}}
     </p>
@@ -28,7 +28,7 @@
     {{!-- @formatter:off --}}
 <pre>\{{#twbs-popover content="Click elsewhere to close this popover." popoverTrigger="focus" as |popover|}}
   \{{#popover.trigger}}
-    &lt;a href="javascript:void(0)" role="button">Click to gain focus.&lt;/a>
+    &lt;a href="javascript:void(0)" role="button" tabindex="1">Click to gain focus.&lt;/a>
   \{{/popover.trigger}}
 \{{/twbs-popover}}
 </pre>
