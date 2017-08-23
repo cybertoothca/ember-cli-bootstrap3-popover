@@ -1,8 +1,18 @@
 # ember-cli-bootstrap3-popover [![GitHub version](http://badge.fury.io/gh/cybertoothca%2Fember-cli-bootstrap3-popover.svg)](http://badge.fury.io/gh/cybertoothca%2Fember-cli-bootstrap3-popover) ![](http://embadge.io/v1/badge.svg?start=2.3.0)
 
-[![npm version](http://badge.fury.io/js/ember-cli-bootstrap3-popover.svg)](http://badge.fury.io/js/ember-cli-bootstrap3-popover) [![CircleCI](http://circleci.com/gh/cybertoothca/ember-cli-bootstrap3-popover.svg?style=shield)](http://circleci.com/gh/cybertoothca/ember-cli-bootstrap3-popover) [![Code Climate](http://codeclimate.com/github/cybertoothca/ember-cli-bootstrap3-popover/badges/gpa.svg)](http://codeclimate.com/github/cybertoothca/ember-cli-bootstrap3-popover) ![Dependencies](http://david-dm.org/cybertoothca/ember-cli-bootstrap3-popover.svg) [![ember-observer-badge](http://emberobserver.com/badges/ember-cli-bootstrap3-popover.svg)](http://emberobserver.com/addons/ember-cli-bootstrap3-popover) [![License](http://img.shields.io/npm/l/ember-cli-bootstrap3-popover.svg)](LICENSE.md)
+[![npm version](http://badge.fury.io/js/ember-cli-bootstrap3-popover.svg)](http://badge.fury.io/js/ember-cli-bootstrap3-popover) ![downloads](https://img.shields.io/npm/dy/ember-cli-bootstrap3-popover.svg) [![CircleCI](http://circleci.com/gh/cybertoothca/ember-cli-bootstrap3-popover.svg?style=shield)](http://circleci.com/gh/cybertoothca/ember-cli-bootstrap3-popover) [![Code Climate](http://codeclimate.com/github/cybertoothca/ember-cli-bootstrap3-popover/badges/gpa.svg)](http://codeclimate.com/github/cybertoothca/ember-cli-bootstrap3-popover) ![Dependencies](http://david-dm.org/cybertoothca/ember-cli-bootstrap3-popover.svg) [![ember observer](http://emberobserver.com/badges/ember-cli-bootstrap3-popover.svg)](http://emberobserver.com/addons/ember-cli-bootstrap3-popover) [![License](http://img.shields.io/npm/l/ember-cli-bootstrap3-popover.svg)](LICENSE.md)
 
 This addon allows you to quickly and conveniently create a [Bootstrap3 Popover](http://getbootstrap.com/javascript/#popovers).
+
+## Tested Against
+
+[![ember-lts-2.4](https://img.shields.io/badge/ember--try-ember--lts--2.4-brightgreen.svg)](https://circleci.com/gh/cybertoothca/ember-cli-bootstrap3-popover)
+[![ember-lts-2.8](https://img.shields.io/badge/ember--try-ember--lts--2.8-brightgreen.svg)](https://circleci.com/gh/cybertoothca/ember-cli-bootstrap3-popover)
+[![ember-lts-2.12](https://img.shields.io/badge/ember--try-ember--lts--2.12-brightgreen.svg)](https://circleci.com/gh/cybertoothca/ember-cli-bootstrap3-popover)
+
+[![ember-release](https://img.shields.io/badge/ember--try-ember--release-brightgreen.svg)](https://circleci.com/gh/cybertoothca/ember-cli-bootstrap3-popover)
+[![ember-beta](https://img.shields.io/badge/ember--try-ember--beta-brightgreen.svg)](https://circleci.com/gh/cybertoothca/ember-cli-bootstrap3-popover)
+[![ember-canary](https://img.shields.io/badge/ember--try-ember--canary-brightgreen.svg)](https://circleci.com/gh/cybertoothca/ember-cli-bootstrap3-popover)
 
 ## Demo
 
@@ -41,7 +51,9 @@ _Further information about these items can be found in the Usage section below._
 
 The following will install this addon:
 
-    $ ember install ember-cli-bootstrap3-popover
+```
+ember install ember-cli-bootstrap3-popover
+```
 
 __As mentioned, you must install Bootstrap3 along with the tooltip plugin.  See the requirements section above.__
 
@@ -154,9 +166,23 @@ that are used to initialize the Bootstrap popover.
 
 ## Setup
 
-* `git clone git@github.com:cybertoothca/ember-cli-bootstrap3-popover.git`
-* `npm install`
-* `bower install`
+### Checkout
+
+```
+$ git clone git@github.com:cybertoothca/ember-cli-bootstrap3-popover.git
+```
+
+### With NPM
+
+```
+npm install
+```
+
+### With Yarn
+
+```
+yarn
+```
 
 ## Running The Dummy Application
 
@@ -206,10 +232,21 @@ in your _other_ project's `package.json`.
 Make sure your `~/.aws/credentials` file has a profile named _cybertooth_ 
 with a valid key and secret,
 
-    [cybertooth]
-    aws_access_key_id = <KEY>
-    aws_secret_access_key = <SECRET>
+```
+[cybertooth]
+aws_access_key_id = <KEY>
+aws_secret_access_key = <SECRET>
+```
 
 Deploy by invoking the following command: `ember deploy production`
 
 Confirm your changes are showing up in our S3 container: http://ember-cli-bootstrap3-popover.cybertooth.io/
+
+# Releasing & Publishing To NPM
+
+```
+npm version x.y.z-sub.#
+git push
+git push --tags
+npm publish
+```

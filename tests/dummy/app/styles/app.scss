@@ -1,20 +1,13 @@
-// TODO: can't @import fonts because PhantomJS get's angry
-//@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Raleway:700');
-$font-family-base: lato, "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$headings-font-family: Raleway, $font-family-base;
+@import "../../../../node_modules/bootswatch/spacelab/variables";
 
-//noinspection CssUnknownTarget
-@import "ember-cli-font-awesome-sass";
+$icon-font-path: '/assets/bootstrap/'; // TODO: this should be removed once I fix the bootstrap3-sass addon
 //noinspection CssUnknownTarget
 @import 'ember-cli-bootstrap3-sass';
+@import "../../../../node_modules/bootswatch/spacelab/bootswatch";
 //noinspection CssUnknownTarget
-@import 'ember-cli-bootstrap3-theme';
+@import "ember-cli-font-awesome-sass";
 
 body {
-  padding-top: 70px;
-  margin-bottom: 50%;
-}
-
-h3 {
-  margin-top: 3rem;
+  padding-top: 50px; // for the fixed navbar
+  margin-bottom: 50%; // to allow scrolling beyond the end of the last example
 }

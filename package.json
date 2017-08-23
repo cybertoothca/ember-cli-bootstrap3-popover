@@ -28,6 +28,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
+    "bootswatch": "^3.3.7",
     "broccoli-asset-rev": "^2.4.2",
     "ember-ajax": "^2.0.1",
     "ember-cli": "2.6.3",
