@@ -2,7 +2,7 @@
 
 [![npm version](http://badge.fury.io/js/ember-cli-bootstrap3-popover.svg)](http://badge.fury.io/js/ember-cli-bootstrap3-popover) ![downloads](https://img.shields.io/npm/dy/ember-cli-bootstrap3-popover.svg) [![CircleCI](http://circleci.com/gh/cybertoothca/ember-cli-bootstrap3-popover.svg?style=shield)](http://circleci.com/gh/cybertoothca/ember-cli-bootstrap3-popover) [![Code Climate](http://codeclimate.com/github/cybertoothca/ember-cli-bootstrap3-popover/badges/gpa.svg)](http://codeclimate.com/github/cybertoothca/ember-cli-bootstrap3-popover) ![Dependencies](http://david-dm.org/cybertoothca/ember-cli-bootstrap3-popover.svg) [![ember observer](http://emberobserver.com/badges/ember-cli-bootstrap3-popover.svg)](http://emberobserver.com/addons/ember-cli-bootstrap3-popover) [![License](http://img.shields.io/npm/l/ember-cli-bootstrap3-popover.svg)](LICENSE.md)
 
-This addon allows you to quickly and conveniently create a [Bootstrap3 Popover](http://getbootstrap.com/javascript/#popovers).
+This addon allows you to quickly and conveniently create a [Bootstrap3 Popover](https://getbootstrap.com/docs/3.3/javascript/#popovers).
 
 ## Tested Against
 
@@ -34,7 +34,7 @@ popover and in normal trigger events will accept clicks, hovering, and focus eve
 The following _mixin_ also ships with this addon:
 
 * `Popover` - imported as `import Popover as 'ember-cli-bootstrap3-popover/mixins/popover'` and includes all of the
-popover options as found in the [Bootstrap documentation](http://getbootstrap.com/javascript/#popovers-options).
+popover options as found in the [Bootstrap documentation](https://getbootstrap.com/docs/3.3/javascript/#popovers-options).
 
 _Further information about these items can be found in the Usage section below._
 
@@ -133,7 +133,7 @@ Seriously, check out the examples and all of this will make sense:
 #### `Popover`
 
 A mixin that provides access to all of the Bootstrap popover options as found
-here: [http://getbootstrap.com/javascript/#popovers-options](http://getbootstrap.com/javascript/#popovers-options)
+here: [http://getbootstrap.com/javascript/#popovers-options](https://getbootstrap.com/docs/3.3/javascript/#popovers-options)
 
 ##### Properties
 
