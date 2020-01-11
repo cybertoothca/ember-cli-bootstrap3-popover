@@ -189,11 +189,16 @@ yarn
 * `ember server`
 * Visit your app at http://localhost:4200.
 
-## Running Addon Tests
+### Linting
 
-* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+* `npm run lint:js`
+* `npm run lint:js -- --fix`
+
+### Running tests
+
+* `ember test` – Runs the test suite on the current Ember version
+* `ember test --server` – Runs the test suite in "watch mode"
+* `npm test` – Runs `ember try:each` to test your addon against multiple Ember versions
 
 ## Building The Addon
 
@@ -250,3 +255,7 @@ git push
 git push --tags
 npm publish
 ```
+
+## License
+
+This project is licensed under the [MIT License](LICENSE.md).
