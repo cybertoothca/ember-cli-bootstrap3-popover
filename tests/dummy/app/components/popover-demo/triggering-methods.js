@@ -1,12 +1,13 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+// noinspection JSFileReferences
 import layout from '../../templates/components/popover-demo/triggering-methods';
 
-export default Ember.Component.extend({
+export default Component.extend({
   actions: {
     onShow() {
       this.$('.label-show')
         .addClass('label-success');
-      setTimeout(function () {
+      setTimeout(function() {
         this.$('.label-show')
           .removeClass('label-success');
       }, 2500);
@@ -14,7 +15,7 @@ export default Ember.Component.extend({
     onShown() {
       this.$('.label-shown')
         .addClass('label-success');
-      setTimeout(function () {
+      setTimeout(function() {
         this.$('.label-shown')
           .removeClass('label-success');
       }, 2500);
@@ -22,7 +23,7 @@ export default Ember.Component.extend({
     onHide() {
       this.$('.label-hide')
         .addClass('label-success');
-      setTimeout(function () {
+      setTimeout(function() {
         this.$('.label-hide')
           .removeClass('label-success');
       }, 2500);
@@ -30,7 +31,7 @@ export default Ember.Component.extend({
     onHidden() {
       this.$('.label-hidden')
         .addClass('label-success');
-      setTimeout(function () {
+      setTimeout(function() {
         this.$('.label-hidden')
           .removeClass('label-success');
       }, 2500);
@@ -38,7 +39,7 @@ export default Ember.Component.extend({
     onInserted() {
       this.$('.label-inserted')
         .addClass('label-success');
-      setTimeout(function () {
+      setTimeout(function() {
         this.$('.label-inserted')
           .removeClass('label-success');
       }, 2500);

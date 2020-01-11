@@ -1,3 +1,5 @@
+import Component from '@ember/component';
+import { isPresent } from '@ember/utils';
 import Ember from 'ember';
 import $ from 'jquery';
 import Popover from '../mixins/popover';
@@ -7,7 +9,7 @@ import layout from '../templates/components/twbs-popover';
 /**
  * A simple `<a>` (anchor) element that can be clicked to produce a popover.
  */
-export default Ember.Component.extend(Popover, {
+export default Component.extend(Popover, {
   actions: {
     /**
      * @see http://getbootstrap.com/javascript/#popovers-methods
@@ -58,7 +60,7 @@ export default Ember.Component.extend(Popover, {
     this._super(arguments);
 
     const options = this.getOptions();
-    if (Ember.isPresent(this.get('_$triggerElement'))) {
+    if (isPresent(this.get('_$triggerElement'))) {
       this.get('_$triggerElement')
         .popover(options)
         .on('show.bs.popover', this.get('onShow'))
@@ -73,7 +75,7 @@ export default Ember.Component.extend(Popover, {
   willDestroyElement() {
     this._super(arguments);
 
-    if (Ember.isPresent(this.get('_$triggerElement'))) {
+    if (isPresent(this.get('_$triggerElement'))) {
       this.get('_$triggerElement').popover('destroy');
     }
   },

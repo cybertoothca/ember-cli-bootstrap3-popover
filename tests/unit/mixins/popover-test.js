@@ -1,11 +1,11 @@
-import Ember from 'ember';
+import EmberObject from '@ember/object';
 import PopoverMixin from 'ember-cli-bootstrap3-popover/mixins/popover';
 import { module, test } from 'qunit';
 
 module('Unit | Mixin | popover');
 
-test('when requesting the options hash the defaults are all present', function (assert) {
-  let PopoverObject = Ember.Object.extend(PopoverMixin);
+test('when requesting the options hash the defaults are all present', function(assert) {
+  let PopoverObject = EmberObject.extend(PopoverMixin);
   let popover = PopoverObject.create();
   const options = popover.getOptions();
   assert.equal(options.animation, true);
@@ -21,34 +21,34 @@ test('when requesting the options hash the defaults are all present', function (
   assert.equal(options.title, '');
 });
 
-test('when requesting the options hash the the popoverContainer shows up under container', function (assert) {
-  let PopoverObject = Ember.Object.extend(PopoverMixin);
-  let popover = PopoverObject.create({popoverContainer: 'some-container'});
+test('when requesting the options hash the the popoverContainer shows up under container', function(assert) {
+  let PopoverObject = EmberObject.extend(PopoverMixin);
+  let popover = PopoverObject.create({ popoverContainer: 'some-container' });
   const options = popover.getOptions();
   assert.equal(options.container, 'some-container');
 });
 
-test('when requesting the options hash the the popoverTrigger shows up under trigger', function (assert) {
-  let PopoverObject = Ember.Object.extend(PopoverMixin);
-  let popover = PopoverObject.create({popoverTrigger: 'focus'});
+test('when requesting the options hash the the popoverTrigger shows up under trigger', function(assert) {
+  let PopoverObject = EmberObject.extend(PopoverMixin);
+  let popover = PopoverObject.create({ popoverTrigger: 'focus' });
   const options = popover.getOptions();
   assert.equal(options.trigger, 'focus');
 });
 
-test('when the delay value is set both show and hide are the same', function (assert) {
-  const popoverMixin = Ember.Object.extend(PopoverMixin).create({delay: 500});
+test('when the delay value is set both show and hide are the same', function(assert) {
+  const popoverMixin = EmberObject.extend(PopoverMixin).create({ delay: 500 });
   assert.equal(popoverMixin.get('_delayComputed.hide'), 500);
   assert.equal(popoverMixin.get('_delayComputed.show'), 500);
 });
 
-test('when only the delay-show value is set ', function (assert) {
-  const popoverMixin = Ember.Object.extend(PopoverMixin).create({delayShow: 500});
+test('when only the delay-show value is set ', function(assert) {
+  const popoverMixin = EmberObject.extend(PopoverMixin).create({ delayShow: 500 });
   assert.equal(popoverMixin.get('_delayComputed.hide'), 0);
   assert.equal(popoverMixin.get('_delayComputed.show'), 500);
 });
 
-test('when only the delay-hide value is set ', function (assert) {
-  const popoverMixin = Ember.Object.extend(PopoverMixin).create({delayHide: 500});
+test('when only the delay-hide value is set ', function(assert) {
+  const popoverMixin = EmberObject.extend(PopoverMixin).create({ delayHide: 500 });
   assert.equal(popoverMixin.get('_delayComputed.hide'), 500);
   assert.equal(popoverMixin.get('_delayComputed.show'), 0);
 });

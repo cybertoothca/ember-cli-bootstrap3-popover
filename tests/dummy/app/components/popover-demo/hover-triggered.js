@@ -1,6 +1,7 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+// noinspection JSFileReferences
 import layout from '../../templates/components/popover-demo/hover-triggered';
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout
 });
