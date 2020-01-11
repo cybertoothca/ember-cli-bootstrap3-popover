@@ -1,5 +1,5 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-cli-bootstrap3-popover'
+  name: require('./package').name
 };
