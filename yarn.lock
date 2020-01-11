@@ -1174,6 +1174,16 @@ boom@2.x.x:
   dependencies:
     hoek "2.x.x"
 
+bootstrap-sass@3.4.1:
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/bootstrap-sass/-/bootstrap-sass-3.4.1.tgz#6843c73b1c258a0ac5cb2cc6f6f5285b664a8e9a"
+  integrity sha512-p5rxsK/IyEDQm2CwiHxxUi0MZZtvVFbhWmyMOt4lLkA4bujDA1TGoKT0i1FKIWiugAdP+kK8T5KMDFIKQCLYIA==
+
+bootstrap@3.4.1:
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-3.4.1.tgz#c3a347d419e289ad11f4033e3c4132b87c081d72"
+  integrity sha512-yN5oZVmRCwe5aKwzRj6736nSmKDX7pLYwsXiCj/EYmo16hODaBiT4En5btW/jhBF/seV+XMx3aYwukYC3A49DA==
+
 bootswatch@^3.3.7:
   version "3.3.7"
   resolved "https://registry.yarnpkg.com/bootswatch/-/bootswatch-3.3.7.tgz#eb6f9a9a8523b87a706ea91deec3e0d7eaa8ab1f"
@@ -2501,7 +2511,7 @@ ember-assign-polyfill@~2.4.0:
     ember-cli-babel "^6.6.0"
     ember-cli-version-checker "^2.0.0"
 
-ember-cli-babel@^5.1.6, ember-cli-babel@^5.1.7:
+ember-cli-babel@^5.1.7:
   version "5.2.4"
   resolved "https://registry.yarnpkg.com/ember-cli-babel/-/ember-cli-babel-5.2.4.tgz#5ce4f46b08ed6f6d21e878619fb689719d6e8e13"
   dependencies:
@@ -2546,12 +2556,6 @@ ember-cli-babel@^6.0.0-beta.4, ember-cli-babel@^6.11.0, ember-cli-babel@^6.12.0,
     clone "^2.0.0"
     ember-cli-version-checker "^2.1.2"
     semver "^5.5.0"
-
-ember-cli-bootstrap3-sass@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/ember-cli-bootstrap3-sass/-/ember-cli-bootstrap3-sass-1.0.6.tgz#3eba771653771e1344361c205e256526078ee685"
-  dependencies:
-    ember-cli-babel "^5.1.6"
 
 ember-cli-broccoli-sane-watcher@^2.0.4:
   version "2.0.4"
@@ -2641,12 +2645,6 @@ ember-cli-eslint@^4.2.1:
     ember-cli-version-checker "^2.1.0"
     rsvp "^4.6.1"
     walk-sync "^0.3.0"
-
-ember-cli-font-awesome-sass@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/ember-cli-font-awesome-sass/-/ember-cli-font-awesome-sass-1.0.4.tgz#a14d63f759693230779bed80610a176cfa8c9463"
-  dependencies:
-    ember-cli-babel "^5.1.6"
 
 ember-cli-get-component-path-option@^1.0.0:
   version "1.0.0"
@@ -3618,6 +3616,11 @@ flat-cache@^1.2.1:
     del "^2.0.2"
     graceful-fs "^4.1.2"
     write "^0.2.1"
+
+font-awesome@4.7:
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/font-awesome/-/font-awesome-4.7.0.tgz#8fa8cf0411a1a31afd07b06d2902bb9fc815a133"
+  integrity sha1-j6jPBBGhoxr9B7BtKQK7n8gVoTM=
 
 for-in@^1.0.1, for-in@^1.0.2:
   version "1.0.2"
