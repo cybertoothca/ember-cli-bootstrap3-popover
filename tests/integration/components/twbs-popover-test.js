@@ -6,7 +6,7 @@ moduleForComponent('twbs-popover', 'Integration | Component | twbs popover', {
 });
 
 // TODO: this should be moved into an integration test to capitalize on the andThen helper
-test('when manually triggering show', function (assert) {
+test('when manually triggering show', function(assert) {
   this.render(hbs`
     {{#twbs-popover popoverTrigger="manual" title="Popover Title" as |po hide show toggle|}}
       {{#po.trigger}}Clickable Text{{/po.trigger}}
@@ -22,22 +22,22 @@ test('when manually triggering show', function (assert) {
 });
 
 // TODO: this should be moved into an integration test to capitalize on the andThen helper
-test('when hooking into the Bootstrap popover events', function (assert) {
+test('when hooking into the Bootstrap popover events', function(assert) {
   let isShow = false, isShown = false, isHide = false, isHidden = false, isInserted = false;
   this.setProperties({
-    onShow: function () {
+    onShow: function() {
       isShow = true;
     },
-    onShown: function () {
+    onShown: function() {
       isShown = true;
     },
-    onHide: function () {
+    onHide: function() {
       isHide = true;
     },
-    onHidden: function () {
+    onHidden: function() {
       isHidden = true;
     },
-    onInserted: function () {
+    onInserted: function() {
       isInserted = true;
     },
   });
@@ -63,7 +63,7 @@ test('when hooking into the Bootstrap popover events', function (assert) {
   assert.ok(isInserted, 'inserted.bs.popover fired.');
 });
 
-test('when clicking the link the popover has the nested `twbs-popover.title`', function (assert) {
+test('when clicking the link the popover has the nested `twbs-popover.title`', function(assert) {
   this.render(hbs`
     {{#twbs-popover html?=true as |po|}}
       {{#po.trigger}}Clickable Text{{/po.trigger}}
@@ -72,10 +72,10 @@ test('when clicking the link the popover has the nested `twbs-popover.title`', f
   `);
 
   this.$('.twbs-popover-trigger').click();
-  assert.equal(this.$('.popover-title').html().trim(), '<div class=\"twbs-popover-title\"><h1>Heading One</h1></div>');
+  assert.equal(this.$('.popover-title').html().trim(), '<div class="twbs-popover-title"><h1>Heading One</h1></div>');
 });
 
-test('when clicking the link the popover has the property-based `twbs-popover.title`', function (assert) {
+test('when clicking the link the popover has the property-based `twbs-popover.title`', function(assert) {
   this.render(hbs`
     {{#twbs-popover html?=true title="<h1>Heading One</h1>" as |po|}}
       {{#po.trigger}}Clickable Text{{/po.trigger}}
@@ -86,7 +86,7 @@ test('when clicking the link the popover has the property-based `twbs-popover.ti
   assert.equal(this.$('.popover-title').html().trim(), '<h1>Heading One</h1>');
 });
 
-test('when clicking the link the popover has the nested `twbs-popover.content`', function (assert) {
+test('when clicking the link the popover has the nested `twbs-popover.content`', function(assert) {
   this.render(hbs`
     {{#twbs-popover html?=true as |po|}}
       {{#po.trigger}}Clickable Text{{/po.trigger}}
@@ -96,10 +96,10 @@ test('when clicking the link the popover has the nested `twbs-popover.content`',
 
   this.$('.twbs-popover-trigger').click();
   assert.equal(this.$('.popover-content').html().trim(),
-    '<div class=\"twbs-popover-content\"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p></div>');
+    '<div class="twbs-popover-content"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p></div>');
 });
 
-test('when clicking the link the popover has the property-based `twbs-popover.content`', function (assert) {
+test('when clicking the link the popover has the property-based `twbs-popover.content`', function(assert) {
   this.render(hbs`
     {{#twbs-popover html?=true content="<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>" as |po|}}
       {{#po.trigger}}Clickable Text{{/po.trigger}}
@@ -111,7 +111,7 @@ test('when clicking the link the popover has the property-based `twbs-popover.co
     '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>');
 });
 
-test('the bootstrap popover is initialized when the trigger is present', function (assert) {
+test('the bootstrap popover is initialized when the trigger is present', function(assert) {
   this.render(hbs`
     {{#twbs-popover as |po|}}
       {{#po.trigger}}Clickable Text{{/po.trigger}}
@@ -121,7 +121,7 @@ test('the bootstrap popover is initialized when the trigger is present', functio
     'Assuming the popover is activated because the `data-original-title` attribute is set');
 });
 
-test('has `twbs-popover` class', function (assert) {
+test('has `twbs-popover` class', function(assert) {
   this.render(hbs`
     {{#twbs-popover}}
       template block text
