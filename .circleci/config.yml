@@ -2,7 +2,7 @@ version: 2
 jobs:
   bower_and_cache:
     docker:
-      - image: circleci/node:10.18.0-browsers
+      - image: circleci/node:8.17.0-browsers
     steps:
       - checkout
       - restore_cache:
@@ -20,7 +20,7 @@ jobs:
             - ./bower_components
   yarn_and_cache:
     docker:
-      - image: circleci/node:10.18.0-browsers
+      - image: circleci/node:8.17.0-browsers
     steps:
       - checkout
       - restore_cache:
@@ -37,7 +37,7 @@ jobs:
             - ./node_modules
   test_default:
     docker:
-      - image: circleci/node:10.18.0-browsers
+      - image: circleci/node:8.17.0-browsers
     steps:
       - checkout
 
@@ -56,7 +56,7 @@ jobs:
           path: tmp/test-results
   test_release:
     docker:
-      - image: circleci/node:10.18.0-browsers
+      - image: circleci/node:8.17.0-browsers
     steps:
       - checkout
 
@@ -70,7 +70,7 @@ jobs:
           command: ./node_modules/.bin/ember try:one ember-release --skip-cleanup
   test_beta:
     docker:
-      - image: circleci/node:10.18.0-browsers
+      - image: circleci/node:8.17.0-browsers
     steps:
       - checkout
 
@@ -84,7 +84,7 @@ jobs:
           command: ./node_modules/.bin/ember try:one ember-beta --skip-cleanup
   test_canary:
     docker:
-      - image: circleci/node:10.18.0-browsers
+      - image: circleci/node:8.17.0-browsers
     steps:
       - checkout
 
@@ -98,7 +98,7 @@ jobs:
           command: ./node_modules/.bin/ember try:one ember-canary --skip-cleanup
   test_lts_2_16:
     docker:
-      - image: circleci/node:10.18.0-browsers
+      - image: circleci/node:8.17.0-browsers
     steps:
       - checkout
 
@@ -112,7 +112,7 @@ jobs:
           command: ./node_modules/.bin/ember try:one ember-lts-2.16 --skip-cleanup
   test_lts_2_12:
     docker:
-      - image: circleci/node:10.18.0-browsers
+      - image: circleci/node:8.17.0-browsers
     steps:
       - checkout
 
@@ -126,7 +126,7 @@ jobs:
           command: ./node_modules/.bin/ember try:one ember-lts-2.12 --skip-cleanup
   test_lts_2_8:
     docker:
-      - image: circleci/node:10.18.0-browsers
+      - image: circleci/node:8.17.0-browsers
     steps:
       - checkout
 
@@ -140,7 +140,7 @@ jobs:
           command: ./node_modules/.bin/ember try:one ember-lts-2.8 --skip-cleanup
   test_lts_2_4:
     docker:
-      - image: circleci/node:10.18.0-browsers
+      - image: circleci/node:8.17.0-browsers
     steps:
       - checkout
 
