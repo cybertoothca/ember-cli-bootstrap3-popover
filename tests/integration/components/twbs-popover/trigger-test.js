@@ -5,9 +5,9 @@ moduleForComponent('twbs-popover/trigger', 'Integration | Component | twbs popov
   integration: true
 });
 
-test('when registering its html', function (assert) {
-  this.set('register', function (element) {
-    assert.equal(element.html().trim(), '<button>Button</button>', 'The element is passed into the register function.');
+test('when registering its html', function(assert) {
+  this.set('register', function(element) {
+    assert.equal(element.innerHTML.trim(), '<button>Button</button>', 'The element is passed into the register function.');
   });
   this.render(hbs`
 {{#twbs-popover/trigger register=register}}
@@ -16,7 +16,7 @@ test('when registering its html', function (assert) {
   `);
 });
 
-test('the element rendered is a span with the appropriate class', function (assert) {
+test('the element rendered is a span with the appropriate class', function(assert) {
   this.render(hbs`
     {{#twbs-popover/trigger}}
       The Trigger Span

@@ -81,6 +81,11 @@ export default Ember.Mixin.create({
    */
   popoverTemplate: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>',
   /**
+   * Enable or disable the sanitization. If activated 'template', 'content' and 'title' options will be sanitized.
+   * @see https://getbootstrap.com/docs/3.4/javascript/#popovers-options
+   */
+  sanitize: false,
+  /**
    * Default title value if title attribute isn't present.
    * If a function is given, it will be called with its this reference set to the element that the popover
    * is attached to.
@@ -92,7 +97,7 @@ export default Ember.Mixin.create({
    */
   getOptions() {
     const hash =
-      this.getProperties('animation', 'content', 'html', 'placement', 'selector', 'title');
+      this.getProperties('animation', 'content', 'html', 'placement', 'sanitize', 'selector', 'title');
     hash.container = this.get('popoverContainer');
     hash.delay = this.get('_delayComputed');
     hash.template = this.get('popoverTemplate');
@@ -105,7 +110,7 @@ export default Ember.Mixin.create({
    * Object structure is: `delay: { "show": 500, "hide": 100 }`.
    * @private
    */
-  _delayComputed: Ember.computed('delay', 'delayHide', 'delayShow', function () {
+  _delayComputed: Ember.computed('delay', 'delayHide', 'delayShow', function() {
     const delayObject = {
       hide: this.get('delay'),
       show: this.get('delay')

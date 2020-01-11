@@ -5,9 +5,9 @@ moduleForComponent('twbs-popover/title', 'Integration | Component | twbs popover
   integration: true
 });
 
-test('when registering its html', function (assert) {
-  this.set('register', function ($html) {
-    assert.equal($html.html().trim(), '<h1>Heading One</h1>', 'The html is passed into the register function.');
+test('when registering its html', function(assert) {
+  this.set('register', function(html) {
+    assert.equal(html.innerHTML.trim(), '<h1>Heading One</h1>', 'The html is passed into the register function.');
   });
   this.render(hbs`
 {{#twbs-popover/title register=register}}
@@ -16,7 +16,7 @@ test('when registering its html', function (assert) {
   `);
 });
 
-test('the title div-container is hidden', function (assert) {
+test('the title div-container is hidden', function(assert) {
   this.render(hbs`
 {{#twbs-popover/title}}
   <h1>Heading One</h1>

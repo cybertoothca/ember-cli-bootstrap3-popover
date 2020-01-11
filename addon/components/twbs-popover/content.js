@@ -1,4 +1,5 @@
 import Ember from 'ember';
+// noinspection JSFileReferences
 import layout from '../../templates/components/twbs-popover/content';
 
 export default Ember.Component.extend({
@@ -8,11 +9,13 @@ export default Ember.Component.extend({
    * Call the closure action passed to the `registerContent` property.  Invoking this closure should set the content
    * section of the popover.
    */
-  _register: Ember.on('didInsertElement', function () {
+  didInsertElement() {
+    this._super(arguments);
+
     if (Ember.isPresent(this.get('register'))) {
-      this.get('register')(this.$('.twbs-popover-content'));
+      this.get('register')(this.get('element').querySelector('.twbs-popover-content'));
     } else {
       Ember.Logger.warn('The `twbs-popover.content` component should have an action assigned to its `register` property.');
     }
-  })
+  }
 });
