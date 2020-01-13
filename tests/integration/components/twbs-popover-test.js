@@ -1,4 +1,4 @@
-import { render } from '@ember/test-helpers';
+import { click, find, findAll, render } from '@ember/test-helpers';
 import { setupRenderingTest } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 import { module, test } from 'qunit';
@@ -16,10 +16,10 @@ module('Integration | Component | twbs popover', function(hooks) {
       {{/twbs-popover}}
     `);
 
-    assert.equal(this.$('.popover-title').length, 0);
+    assert.equal(findAll('.popover-title').length, 0);
 
-    this.$('.btn-show').click();
-    assert.equal(this.$('.popover-title').html(), 'Popover Title');
+    await click('.btn-show');
+    assert.equal(find('.popover-title').innerHTML, 'Popover Title');
   });
 
   // TODO: this should be moved into an integration test to capitalize on the andThen helper
@@ -55,7 +55,7 @@ module('Integration | Component | twbs popover', function(hooks) {
     assert.notOk(isHidden, 'hidden.bs.popover HAS NOT YET fired.');
     assert.notOk(isInserted, 'hidden.bs.popover HAS NOT YET fired.');
 
-    this.$('.twbs-popover-trigger').click();
+    await click('.twbs-popover-trigger');
 
     assert.ok(isShow, 'show.bs.popover fired.');
     assert.notOk(isShown, 'shown.bs.popover HAS NOT YET fired.');
@@ -72,8 +72,8 @@ module('Integration | Component | twbs popover', function(hooks) {
       {{/twbs-popover}}
     `);
 
-    this.$('.twbs-popover-trigger').click();
-    assert.equal(this.$('.popover-title').html().trim(), '<div class="twbs-popover-title"><h1>Heading One</h1></div>');
+    await click('.twbs-popover-trigger');
+    assert.equal(find('.popover-title').innerHTML.trim(), '<div class="twbs-popover-title"><h1>Heading One</h1></div>');
   });
 
   test('when clicking the link the popover has the property-based `twbs-popover.title`', async function(assert) {
@@ -83,8 +83,8 @@ module('Integration | Component | twbs popover', function(hooks) {
       {{/twbs-popover}}
     `);
 
-    this.$('.twbs-popover-trigger').click();
-    assert.equal(this.$('.popover-title').html().trim(), '<h1>Heading One</h1>');
+    await click('.twbs-popover-trigger');
+    assert.equal(find('.popover-title').innerHTML.trim(), '<h1>Heading One</h1>');
   });
 
   test('when clicking the link the popover has the nested `twbs-popover.content`', async function(assert) {
@@ -95,8 +95,8 @@ module('Integration | Component | twbs popover', function(hooks) {
       {{/twbs-popover}}
     `);
 
-    this.$('.twbs-popover-trigger').click();
-    assert.equal(this.$('.popover-content').html().trim(),
+    await click('.twbs-popover-trigger');
+    assert.equal(find('.popover-content').innerHTML.trim(),
       '<div class="twbs-popover-content"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p></div>');
   });
 
@@ -107,8 +107,8 @@ module('Integration | Component | twbs popover', function(hooks) {
       {{/twbs-popover}}
     `);
 
-    this.$('.twbs-popover-trigger').click();
-    assert.equal(this.$('.popover-content').html().trim(),
+    await click('.twbs-popover-trigger');
+    assert.equal(find('.popover-content').innerHTML.trim(),
       '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>');
   });
 
@@ -118,7 +118,7 @@ module('Integration | Component | twbs popover', function(hooks) {
         {{#po.trigger}}Clickable Text{{/po.trigger}}
       {{/twbs-popover}}
     `);
-    assert.equal(this.$('.twbs-popover-trigger').attr('data-original-title'), '',
+    assert.equal(find('.twbs-popover-trigger').getAttribute('data-original-title'), '',
       'Assuming the popover is activated because the `data-original-title` attribute is set');
   });
 
@@ -128,6 +128,6 @@ module('Integration | Component | twbs popover', function(hooks) {
         template block text
       {{/twbs-popover}}
     `);
-    assert.ok(this.$('span').hasClass('twbs-popover'));
+    assert.ok(find('span').classList.contains('twbs-popover'));
   });
 });

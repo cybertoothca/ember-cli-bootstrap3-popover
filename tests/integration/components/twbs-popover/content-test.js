@@ -1,4 +1,4 @@
-import { render } from '@ember/test-helpers';
+import { findAll, render } from '@ember/test-helpers';
 import { setupRenderingTest } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 import { module, test } from 'qunit';
@@ -12,9 +12,9 @@ module('Integration | Component | twbs popover/content', function(hooks) {
         'The html is passed into the register function.');
     });
     await render(hbs`
-  {{#twbs-popover/content register=register}}
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-  {{/twbs-popover/content}}
+      {{#twbs-popover/content register=register}}
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      {{/twbs-popover/content}}
     `);
   });
 
@@ -25,7 +25,7 @@ module('Integration | Component | twbs popover/content', function(hooks) {
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
   {{/twbs-popover/content}}
     `);
-    assert.ok(this.$('div').hasClass('hidden'));
-    assert.ok(this.$('div').hasClass('twbs-popover-content'));
+    assert.equal(findAll('.hidden').length, 1);
+    assert.equal(findAll('.twbs-popover-content').length, 1);
   });
 });
