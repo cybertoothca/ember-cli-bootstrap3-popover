@@ -1,15 +1,19 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { isPresent } from '@ember/utils';
+// noinspection JSFileReferences
 import layout from '../../templates/components/twbs-popover/trigger';
 
-export default Ember.Component.extend({
+export default Component.extend({
   classNames: ['twbs-popover-trigger'],
   layout,
   tagName: 'span',
-  _register: Ember.on('didInsertElement', function () {
-    if (Ember.isPresent(this.get('register'))) {
-      this.get('register')(this.$());
+  didInsertElement() {
+    this._super(arguments);
+
+    if (isPresent(this.get('register'))) {
+      this.get('register')(this.get('element'));
     } else {
-      Ember.Logger.warn('The `twbs-popover.trigger` component should have an action assigned to its `register` property.');
+      console.warn('The `twbs-popover.trigger` component should have an action assigned to its `register` property.')
     }
-  })
+  }
 });

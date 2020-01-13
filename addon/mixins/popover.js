@@ -1,14 +1,17 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import { alias } from '@ember/object/computed';
+import Mixin from '@ember/object/mixin';
+import { isPresent } from '@ember/utils';
 
 /**
  * Supporting the basic (and fundamental) attributes of the Bootstrap popover.
  * @see http://getbootstrap.com/javascript/#popovers
  */
-export default Ember.Mixin.create({
+export default Mixin.create({
   /**
    * Apply a CSS fade transition to the popover.
    */
-  animation: Ember.computed.alias('animation?'),
+  animation: alias('animation?'),
   'animation?': true,
   /**
    * Default content value if data-content attribute isn't present.
@@ -37,7 +40,7 @@ export default Ember.Mixin.create({
    * Insert HTML into the popover. If false, jQuery's text method will be used to insert content into
    * the DOM. Use text if you're worried about XSS attacks.
    */
-  html: Ember.computed.alias('html?'),
+  html: alias('html?'),
   'html?': false,
   /**
    * How to position the popover - top | bottom | left | right | auto.
@@ -81,6 +84,11 @@ export default Ember.Mixin.create({
    */
   popoverTemplate: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>',
   /**
+   * Enable or disable the sanitization. If activated 'template', 'content' and 'title' options will be sanitized.
+   * @see https://getbootstrap.com/docs/3.4/javascript/#popovers-options
+   */
+  sanitize: false,
+  /**
    * Default title value if title attribute isn't present.
    * If a function is given, it will be called with its this reference set to the element that the popover
    * is attached to.
@@ -92,7 +100,7 @@ export default Ember.Mixin.create({
    */
   getOptions() {
     const hash =
-      this.getProperties('animation', 'content', 'html', 'placement', 'selector', 'title');
+      this.getProperties('animation', 'content', 'html', 'placement', 'sanitize', 'selector', 'title');
     hash.container = this.get('popoverContainer');
     hash.delay = this.get('_delayComputed');
     hash.template = this.get('popoverTemplate');
@@ -105,18 +113,18 @@ export default Ember.Mixin.create({
    * Object structure is: `delay: { "show": 500, "hide": 100 }`.
    * @private
    */
-  _delayComputed: Ember.computed('delay', 'delayHide', 'delayShow', function () {
+  _delayComputed: computed('delay', 'delayHide', 'delayShow', function() {
     const delayObject = {
       hide: this.get('delay'),
       show: this.get('delay')
     };
 
-    if (Ember.isPresent(this.get('delayHide'))) {
-      Ember.set(delayObject, 'hide', this.get('delayHide'));
+    if (isPresent(this.get('delayHide'))) {
+      delayObject.hide = this.get('delayHide');
     }
 
-    if (Ember.isPresent(this.get('delayShow'))) {
-      Ember.set(delayObject, 'show', this.get('delayShow'));
+    if (isPresent(this.get('delayShow'))) {
+      delayObject.show = this.get('delayShow');
     }
 
     return delayObject;

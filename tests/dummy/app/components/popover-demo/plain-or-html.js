@@ -1,6 +1,9 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { inject as service } from '@ember/service';
+// noinspection JSFileReferences
 import layout from '../../templates/components/popover-demo/plain-or-html';
 
-export default Ember.Component.extend({
+export default Component.extend({
+  clock: service(),
   layout
 });

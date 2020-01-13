@@ -1,3 +1,4 @@
+{{! template-lint-disable }}
 <div class="page-header">
   <h3>HTML-Based Popover Content</h3>
 </div>
@@ -95,7 +96,7 @@
         Current Time
       {{/popover.title}}
       {{#popover.content}}
-        {{clock.hour}}:{{clock.minute}}:{{clock.second}}
+        {{clock.formattedTime}}
       {{/popover.content}}
     {{/twbs-popover}}
   </div>
@@ -109,7 +110,7 @@
     Current Time
   \{{/popover.title}}
   \{{#popover.content}}
-    \{{clock.hour}}:\{{clock.minute}}:\{{clock.second}}
+    \{{clock.formattedTime}}
   \{{/popover.content}}
 \{{/twbs-popover}}
 </pre>
@@ -126,7 +127,7 @@
         <button class="btn btn-default">Click this button</button>
       {{/popover.trigger}}
       {{#popover.title}}
-        {{clock.hour}}:{{clock.minute}}:{{clock.second}}
+        {{clock.formattedTime}}
       {{/popover.title}}
       {{#popover.content}}
         The current time is in the title.
@@ -140,7 +141,7 @@
     &lt;button class="btn btn-default">Click this button&lt;/button>
   \{{/popover.trigger}}
   \{{#popover.title}}
-    \{{clock.hour}}:\{{clock.minute}}:\{{clock.second}}
+    \{{clock.formattedTime}}
   \{{/popover.title}}
   \{{#popover.content}}
     The current time is in the title.
