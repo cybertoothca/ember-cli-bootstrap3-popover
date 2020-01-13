@@ -1,4 +1,4 @@
-import { click, find, findAll, render } from '@ember/test-helpers';
+import { click, find, render } from '@ember/test-helpers';
 import { setupRenderingTest } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 import { module, test } from 'qunit';
@@ -16,7 +16,7 @@ module('Integration | Component | twbs popover', function(hooks) {
       {{/twbs-popover}}
     `);
 
-    assert.equal(findAll('.popover-title').length, 0);
+    assert.dom('.popover-title').doesNotExist();
 
     await click('.btn-show');
     assert.equal(find('.popover-title').innerHTML, 'Popover Title');
@@ -118,8 +118,11 @@ module('Integration | Component | twbs popover', function(hooks) {
         {{#po.trigger}}Clickable Text{{/po.trigger}}
       {{/twbs-popover}}
     `);
-    assert.equal(find('.twbs-popover-trigger').getAttribute('data-original-title'), '',
-      'Assuming the popover is activated because the `data-original-title` attribute is set');
+    assert.dom('.twbs-popover-trigger').hasAttribute(
+      'data-original-title',
+      '',
+      'Assuming the popover is activated because the `data-original-title` attribute is set'
+    );
   });
 
   test('has `twbs-popover` class', async function(assert) {
@@ -128,6 +131,6 @@ module('Integration | Component | twbs popover', function(hooks) {
         template block text
       {{/twbs-popover}}
     `);
-    assert.ok(find('span').classList.contains('twbs-popover'));
+    assert.dom('span').hasClass('twbs-popover');
   });
 });

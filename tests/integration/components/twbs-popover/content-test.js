@@ -1,4 +1,4 @@
-import { findAll, render } from '@ember/test-helpers';
+import { render } from '@ember/test-helpers';
 import { setupRenderingTest } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 import { module, test } from 'qunit';
@@ -25,7 +25,7 @@ module('Integration | Component | twbs popover/content', function(hooks) {
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
   {{/twbs-popover/content}}
     `);
-    assert.equal(findAll('.hidden').length, 1);
-    assert.equal(findAll('.twbs-popover-content').length, 1);
+    assert.dom('.hidden').exists({ count: 1 });
+    assert.dom('.twbs-popover-content').exists({ count: 1 });
   });
 });

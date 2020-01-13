@@ -1,4 +1,4 @@
-import { find, findAll, render } from '@ember/test-helpers';
+import { render } from '@ember/test-helpers';
 import { setupRenderingTest } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 import { module, test } from 'qunit';
@@ -23,7 +23,7 @@ module('Integration | Component | twbs popover/trigger', function(hooks) {
         The Trigger Span
       {{/twbs-popover/trigger}}
     `);
-    assert.equal(findAll('span').length, 1);
-    assert.ok(find('span').classList.contains('twbs-popover-trigger'));
+    assert.dom('span').exists({ count: 1 });
+    assert.dom('span').hasClass('twbs-popover-trigger');
   });
 });

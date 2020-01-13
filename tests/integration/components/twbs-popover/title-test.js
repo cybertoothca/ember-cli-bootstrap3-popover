@@ -1,4 +1,4 @@
-import { findAll, render } from '@ember/test-helpers';
+import { render } from '@ember/test-helpers';
 import { setupRenderingTest } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 import { module, test } from 'qunit';
@@ -23,7 +23,7 @@ module('Integration | Component | twbs popover/title', function(hooks) {
     <h1>Heading One</h1>
   {{/twbs-popover/title}}
     `);
-    assert.equal(findAll('.hidden').length, 1);
-    assert.equal(findAll('.twbs-popover-title').length, 1);
+    assert.dom('.hidden').exists({ count: 1 });
+    assert.dom('.twbs-popover-title').exists({ count: 1 });
   });
 });
