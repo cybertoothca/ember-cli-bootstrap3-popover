@@ -2060,10 +2060,10 @@ bootstrap-sass@3.4.1:
   resolved "https://registry.yarnpkg.com/bootstrap-sass/-/bootstrap-sass-3.4.1.tgz#6843c73b1c258a0ac5cb2cc6f6f5285b664a8e9a"
   integrity sha512-p5rxsK/IyEDQm2CwiHxxUi0MZZtvVFbhWmyMOt4lLkA4bujDA1TGoKT0i1FKIWiugAdP+kK8T5KMDFIKQCLYIA==
 
-bootstrap@3.4.1:
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-3.4.1.tgz#c3a347d419e289ad11f4033e3c4132b87c081d72"
-  integrity sha512-yN5oZVmRCwe5aKwzRj6736nSmKDX7pLYwsXiCj/EYmo16hODaBiT4En5btW/jhBF/seV+XMx3aYwukYC3A49DA==
+bootstrap@4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.1.2.tgz#aee2a93472e61c471fc79fb475531dcbc87de326"
+  integrity sha512-3bP609EdMc/8EwgGp8KgpN8HwnR4V4lZ9CTi5pImMrXNxpkw7dK1B05aMwQWpG1ZWmTLlBSN/uzkuz5GsmQNFA==
 
 bootswatch@^3.3.7:
   version "3.3.7"
