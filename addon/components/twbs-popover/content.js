@@ -1,6 +1,5 @@
 import Component from '@ember/component';
 import { isPresent } from '@ember/utils';
-import Ember from 'ember';
 // noinspection JSFileReferences
 import layout from '../../templates/components/twbs-popover/content';
 
@@ -17,7 +16,7 @@ export default Component.extend({
     if (isPresent(this.get('register'))) {
       this.get('register')(this.get('element').querySelector('.twbs-popover-content'));
     } else {
-      Ember.Logger.warn('The `twbs-popover.content` component should have an action assigned to its `register` property.');
+      console.warn('The `twbs-popover.content` component should have an action assigned to its `register` property.')
     }
   }
 });

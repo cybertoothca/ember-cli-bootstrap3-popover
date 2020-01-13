@@ -1,6 +1,5 @@
 import Component from '@ember/component';
 import { isPresent } from '@ember/utils';
-import Ember from 'ember';
 import $ from 'jquery';
 import Popover from '../mixins/popover';
 // noinspection JSFileReferences
@@ -69,7 +68,7 @@ export default Component.extend(Popover, {
         .on('hidden.bs.popover', this.get('onHidden'))
         .on('inserted.bs.popover', this.get('onInserted'));
     } else {
-      Ember.Logger.warn('The `twbs-popover` component expects to have a `twbs-popover.trigger` element registered with it.  Check out the demo application at http://ember-cli-bootstrap3-popover.cybertooth.io/');
+      console.warn('The `twbs-popover` component expects to have a `twbs-popover.trigger` element registered with it.  Check out the demo application at http://ember-cli-bootstrap3-popover.cybertooth.io/')
     }
   },
   willDestroyElement() {

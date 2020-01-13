@@ -14,7 +14,9 @@ module.exports = {
   env: {
     browser: true
   },
-  rules: {},
+  rules: {
+    'no-console': ['error', { allow: ['warn', 'error'] }]
+  },
   overrides: [
     // node files
     {
