@@ -21,5 +21,6 @@ module.exports = {
         '--window-size=1440,900'
       ].filter(Boolean)
     }
-  }
+  },
+  browser_start_timeout: 60 // for github actions, seems timeouts are happening
 };
