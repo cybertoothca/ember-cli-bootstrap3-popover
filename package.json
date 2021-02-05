@@ -59,7 +59,7 @@
     "ember-cli-deploy-gzip": "^1.0.0",
     "ember-cli-deploy-s3": "^1.1.0",
     "ember-cli-eslint": "^5.1.0",
-    "ember-cli-htmlbars-inline-precompile": "^2.1.0",
+    "ember-cli-htmlbars-inline-precompile": "^3.0.2",
     "ember-cli-inject-live-reload": "^2.0.2",
     "ember-cli-qunit": "^4.3.2",
     "ember-cli-sass": "^10.0.1",
