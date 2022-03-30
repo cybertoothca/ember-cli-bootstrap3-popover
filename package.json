@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-bootstrap3-popover",
-  "version": "2.0.0-rc.1",
+  "version": "3.5.0",
   "description": "This addon allows you to quickly and conveniently create a Bootstrap3 Popover.",
   "keywords": [
     "bootstrap",
