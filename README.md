@@ -51,6 +51,11 @@ ember install ember-cli-bootstrap3-popover
 
 **As mentioned, you must install Bootstrap3 along with the tooltip plugin. See the requirements section above.**
 
+## Compatibility
+
+- Ember.js v2.18 or above
+- Ember CLI v2.13 or above
+
 ### Upgrading
 
 When working through the Ember upgrade process, I recommend
