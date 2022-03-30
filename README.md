@@ -259,3 +259,7 @@ npm publish
 ## License
 
 This project is licensed under the [MIT License](LICENSE.md).
+
+## Contributing
+
+See the [Contributing](CONTRIBUTING.md) guide for details.
