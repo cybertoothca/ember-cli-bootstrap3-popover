@@ -3,36 +3,36 @@ engines:
   duplication:
     enabled: true
     exclude_fingerprints:
-    - fe6983f2eaa6f000004449d2579c32ce
-    - a8e5f920a15822b579517529bdcd35bb
-    - 4c4b56fc277494fafed4603b2b3abfc0
-    - 3d5bdb4d43985e98e57c59f863aa5365
-    - df6b6fd64376dd46e0ca8e8d127f2da9
-    - 6abf5ab49d988083ea87bcc3abc4d25a
-    - 5ee693d9305f81516289eae029e132ab
-    - 8819bc8e9cc6430d74f0b269b0eea495
+      - fe6983f2eaa6f000004449d2579c32ce
+      - a8e5f920a15822b579517529bdcd35bb
+      - 4c4b56fc277494fafed4603b2b3abfc0
+      - 3d5bdb4d43985e98e57c59f863aa5365
+      - df6b6fd64376dd46e0ca8e8d127f2da9
+      - 6abf5ab49d988083ea87bcc3abc4d25a
+      - 5ee693d9305f81516289eae029e132ab
+      - 8819bc8e9cc6430d74f0b269b0eea495
     config:
       languages:
-      - ruby
-      - javascript
-      - python
-      - php
+        - ruby
+        - javascript
+        - python
+        - php
   eslint:
     enabled: true
     exclude_fingerprints:
-    - 52a6d397239e349eb126f30a952e04e9
+      - 52a6d397239e349eb126f30a952e04e9
   fixme:
     enabled: true
 ratings:
   paths:
-  - "**.inc"
-  - "**.js"
-  - "**.jsx"
-  - "**.module"
-  - "**.php"
-  - "**.py"
-  - "**.rb"
+    - '**.inc'
+    - '**.js'
+    - '**.jsx'
+    - '**.module'
+    - '**.php'
+    - '**.py'
+    - '**.rb'
 exclude_paths:
-- config/
-- tests/
-- vendor/
+  - config/
+  - tests/
+  - vendor/

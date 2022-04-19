@@ -13,10 +13,10 @@ export default Component.extend({
   didInsertElement() {
     this._super(arguments);
 
-    if (isPresent(this.get('register'))) {
-      this.get('register')(this.get('element').querySelector('.twbs-popover-title'));
+    if (isPresent(this.register)) {
+      this.register(this.element.querySelector('.twbs-popover-title'));
     } else {
-      console.warn('The `twbs-popover.title` component should have an action assigned to its `register` property.')
+      console.warn('The `twbs-popover.title` component should have an action assigned to its `register` property.');
     }
-  }
+  },
 });

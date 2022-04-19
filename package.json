@@ -37,6 +37,8 @@
     "ember-cli-update:codemods": "ember-cli-update --run-codemods",
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
+    "prettier:check": "prettier --check .",
+    "prettier:write": "prettier --write .",
     "start": "ember serve",
     "test": "ember test",
     "test:all": "ember try:each",
@@ -80,6 +82,7 @@
     "eslint-plugin-node": "^11.0.0",
     "font-awesome": "4.7",
     "loader.js": "^4.7.0",
+    "prettier": "^2.6.2",
     "qunit-dom": "^2.0.0",
     "sass": "^1.24.4"
   },

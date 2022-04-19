@@ -3,5 +3,5 @@ import Component from '@ember/component';
 import layout from '../../templates/components/popover-demo/hover-triggered';
 
 export default Component.extend({
-  layout
+  layout,
 });

@@ -14,7 +14,7 @@ export default Component.extend(Popover, {
      * @see http://getbootstrap.com/javascript/#popovers-methods
      */
     hide() {
-      this.get('_$triggerElement').popover('hide');
+      this._$triggerElement.popover('hide');
     },
     /**
      * Sets the `content` property to the supplied value and the `html?` property to `true`.
@@ -43,14 +43,14 @@ export default Component.extend(Popover, {
      * @see http://getbootstrap.com/javascript/#popovers-methods
      */
     show() {
-      this.get('_$triggerElement').popover('show');
+      this._$triggerElement.popover('show');
     },
     /**
      * @see http://getbootstrap.com/javascript/#popovers-methods
      */
     toggle() {
-      this.get('_$triggerElement').popover('toggle');
-    }
+      this._$triggerElement.popover('toggle');
+    },
   },
   classNames: ['twbs-popover'],
   layout,
@@ -59,28 +59,30 @@ export default Component.extend(Popover, {
     this._super(arguments);
 
     const options = this.getOptions();
-    if (isPresent(this.get('_$triggerElement'))) {
-      this.get('_$triggerElement')
+    if (isPresent(this._$triggerElement)) {
+      this._$triggerElement
         .popover(options)
-        .on('show.bs.popover', this.get('onShow'))
-        .on('shown.bs.popover', this.get('onShown'))
-        .on('hide.bs.popover', this.get('onHide'))
-        .on('hidden.bs.popover', this.get('onHidden'))
-        .on('inserted.bs.popover', this.get('onInserted'));
+        .on('show.bs.popover', this.onShow)
+        .on('shown.bs.popover', this.onShown)
+        .on('hide.bs.popover', this.onHide)
+        .on('hidden.bs.popover', this.onHidden)
+        .on('inserted.bs.popover', this.onInserted);
     } else {
-      console.warn('The `twbs-popover` component expects to have a `twbs-popover.trigger` element registered with it.  Check out the demo application at http://ember-cli-bootstrap3-popover.cybertooth.io/')
+      console.warn(
+        'The `twbs-popover` component expects to have a `twbs-popover.trigger` element registered with it.  Check out the demo application at http://ember-cli-bootstrap3-popover.cybertooth.io/'
+      );
     }
   },
   willDestroyElement() {
     this._super(arguments);
 
-    if (isPresent(this.get('_$triggerElement'))) {
-      this.get('_$triggerElement').popover('destroy');
+    if (isPresent(this._$triggerElement)) {
+      this._$triggerElement.popover('destroy');
     }
   },
   /**
    * The element that the `popover` is attached to.  Usually a link or a button.
    * This is set via the `setTriggerElement` action above.
    */
-  _$triggerElement: undefined
+  _$triggerElement: undefined,
 });

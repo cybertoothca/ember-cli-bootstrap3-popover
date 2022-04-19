@@ -28,25 +28,31 @@
     </p>
   </div>
   <div class="col-sm-8">
-    {{!-- @formatter:off --}}
-<pre>\{{#twbs-popover content="Click elsewhere to close this popover." popoverTrigger="focus" as |popover|}}
-  \{{#popover.trigger}}
-    &lt;a href="javascript:void(0)" role="button" tabindex="1">Click to gain focus.&lt;/a>
-  \{{/popover.trigger}}
-\{{/twbs-popover}}
-</pre>
-      {{!-- @formatter:on --}}
+    {{! @formatter:off }}
+    <pre>\{{#twbs-popover content="Click elsewhere to close this popover." popoverTrigger="focus" as |popover|}}
+      \{{#popover.trigger}} &lt;a href="javascript:void(0)" role="button" tabindex="1">Click to gain focus.&lt;/a>
+      \{{/popover.trigger}}
+      \{{/twbs-popover}}
+    </pre>
+    {{! @formatter:on }}
   </div>
 </div>
 <div class="alert alert-warning">
   <ul>
     <li>
-      Refer to the <a href="http://getbootstrap.com/javascript/#dismiss-on-next-click" target="_blank">
-      Dismiss on next click</a> documentation back on the bootstrap website.
+      Refer to the
+      <a href="http://getbootstrap.com/javascript/#dismiss-on-next-click" target="_blank">
+        Dismiss on next click</a>
+      documentation back on the bootstrap website.
     </li>
     <li>
-      Apparently the <code>focus</code> trigger type will only work with anchor elements. You may also be required
-      to set the anchor's <code>tabindex</code> and <code>role</code> to button.
+      Apparently the
+      <code>focus</code>
+      trigger type will only work with anchor elements. You may also be required to set the anchor's
+      <code>tabindex</code>
+      and
+      <code>role</code>
+      to button.
     </li>
   </ul>
 </div>

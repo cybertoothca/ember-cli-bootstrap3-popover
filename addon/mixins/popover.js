@@ -82,7 +82,8 @@ export default Mixin.create({
    *
    * The outermost wrapper element should have the .popover class.
    */
-  popoverTemplate: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>',
+  popoverTemplate:
+    '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>',
   /**
    * Enable or disable the sanitization. If activated 'template', 'content' and 'title' options will be sanitized.
    * @see https://getbootstrap.com/docs/3.4/javascript/#popovers-options
@@ -99,12 +100,11 @@ export default Mixin.create({
    * @returns {*|Object}
    */
   getOptions() {
-    const hash =
-      this.getProperties('animation', 'content', 'html', 'placement', 'sanitize', 'selector', 'title');
-    hash.container = this.get('popoverContainer');
-    hash.delay = this.get('_delayComputed');
-    hash.template = this.get('popoverTemplate');
-    hash.trigger = this.get('popoverTrigger');
+    const hash = this.getProperties('animation', 'content', 'html', 'placement', 'sanitize', 'selector', 'title');
+    hash.container = this.popoverContainer;
+    hash.delay = this._delayComputed;
+    hash.template = this.popoverTemplate;
+    hash.trigger = this.popoverTrigger;
     return hash;
   },
   /**
@@ -113,20 +113,20 @@ export default Mixin.create({
    * Object structure is: `delay: { "show": 500, "hide": 100 }`.
    * @private
    */
-  _delayComputed: computed('delay', 'delayHide', 'delayShow', function() {
+  _delayComputed: computed('delay', 'delayHide', 'delayShow', function () {
     const delayObject = {
-      hide: this.get('delay'),
-      show: this.get('delay')
+      hide: this.delay,
+      show: this.delay,
     };
 
-    if (isPresent(this.get('delayHide'))) {
-      delayObject.hide = this.get('delayHide');
+    if (isPresent(this.delayHide)) {
+      delayObject.hide = this.delayHide;
     }
 
-    if (isPresent(this.get('delayShow'))) {
-      delayObject.show = this.get('delayShow');
+    if (isPresent(this.delayShow)) {
+      delayObject.show = this.delayShow;
     }
 
     return delayObject;
-  })
+  }),
 });
