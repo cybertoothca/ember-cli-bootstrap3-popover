@@ -28,43 +28,41 @@
     {{/twbs-popover}}
   </div>
   <div class="col-sm-8">
-    {{!-- @formatter:off --}}
-<pre>\{{#twbs-popover popoverTrigger="manual" as |popover hide show toggle|}}
-  \{{#popover.trigger}}
-    The Popover Is Bound To This Text
-  \{{/popover.trigger}}
-  \{{#popover.content}}
-    Click again to hide.
-  \{{/popover.content}}
-  &lt;div class="form-group">
-    &lt;div class="btn-group">
-      &lt;button class="btn btn-default" \{{action hide}}>
-        Hide
-      &lt;/button>
-      &lt;button class="btn btn-default" \{{action show}}>
-        Show
-      &lt;/button>
-      &lt;button class="btn btn-default" \{{action toggle}}>
-        Toggle
-      &lt;/button>
-    &lt;/div>
-  &lt;/div>
-\{{/twbs-popover}}
-</pre>
-      {{!-- @formatter:on --}}
+    {{! @formatter:off }}
+    <pre>\{{#twbs-popover popoverTrigger="manual" as |popover hide show toggle|}}
+      \{{#popover.trigger}} The Popover Is Bound To This Text
+      \{{/popover.trigger}}
+      \{{#popover.content}} Click again to hide.
+      \{{/popover.content}} &lt;div class="form-group"> &lt;div class="btn-group"> &lt;button class="btn btn-default"
+      \{{action hide}}> Hide &lt;/button> &lt;button class="btn btn-default"
+      \{{action show}}> Show &lt;/button> &lt;button class="btn btn-default"
+      \{{action toggle}}> Toggle &lt;/button> &lt;/div> &lt;/div>
+      \{{/twbs-popover}}
+    </pre>
+    {{! @formatter:on }}
   </div>
 </div>
 <div class="alert alert-warning">
   <ul>
     <li>
-      The <code>hide</code>, <code>show</code>, and <code>toggle</code> actions (analogous to the
+      The
+      <code>hide</code>,
+      <code>show</code>, and
+      <code>toggle</code>
+      actions (analogous to the
       <a href="http://getbootstrap.com/javascript/#popovers-methods" target="_blank">Bootstrap popover methods</a>) of
-      the <code>\{{twbs-popover}}</code> will be available when you add them to the
-      <code>\{{#twbs-popover ...}}</code> <em>as</em>.
+      the
+      <code>\{{twbs-popover}}</code>
+      will be available when you add them to the
+      <code>\{{#twbs-popover ...}}</code>
+      <em>as</em>.
     </li>
     <li>
-      When using these actions the <code>popoverTrigger</code> should be set to <code>manual</code> for these actions
-      to work as expected.
+      When using these actions the
+      <code>popoverTrigger</code>
+      should be set to
+      <code>manual</code>
+      for these actions to work as expected.
     </li>
   </ul>
 </div>
@@ -73,8 +71,15 @@
 
 <div class="row">
   <div class="col-sm-4 form-group">
-    {{#twbs-popover popoverTrigger="click" onShow=(action "onShow") onShown=(action "onShown") onHide=(action "onHide")
-                    onHidden=(action "onHidden") onInserted=(action "onInserted") as |popover|}}
+    {{#twbs-popover
+      popoverTrigger="click"
+      onShow=(action "onShow")
+      onShown=(action "onShown")
+      onHide=(action "onHide")
+      onHidden=(action "onHidden")
+      onInserted=(action "onInserted")
+      as |popover|
+    }}
       {{#popover.trigger}}
         <button class="btn btn-default">Click this button</button>
       {{/popover.trigger}}
@@ -92,42 +97,45 @@
     </ul>
   </div>
   <div class="col-sm-8">
-    {{!-- @formatter:off --}}
-<pre>\{{#twbs-popover popoverTrigger="click" onShow=(action "onShow") onShown=(action "onShown") onHide=(action "onHide")
-                onHidden=(action "onHidden") onInserted=(action "onInserted") as |popover|}}
-  \{{#popover.trigger}}
-    &lt;button class="btn btn-default">Click this button&lt;/button>
-  \{{/popover.trigger}}
-  \{{#popover.content}}
-    Click again to hide.
-  \{{/popover.content}}
-\{{/twbs-popover}}
-&lt;ul class="list-inline">
-  &lt;li>&lt;span class="label label-default label-show">Show&lt;/span>&lt;/li>
-  &lt;li>&lt;span class="label label-default label-shown">Shown&lt;/span>&lt;/li>
-  &lt;li>&lt;span class="label label-default label-hide">Hide&lt;/span>&lt;/li>
-  &lt;li>&lt;span class="label label-default label-hidden">Hidden&lt;/span>&lt;/li>
-  &lt;li>&lt;span class="label label-default label-inserted">Inserted&lt;/span>&lt;/li>
-&lt;/ul>
-</pre>
-      {{!-- @formatter:on --}}
+    {{! @formatter:off }}
+    <pre>\{{#twbs-popover popoverTrigger="click" onShow=(action "onShow") onShown=(action "onShown") onHide=(action
+      "onHide") onHidden=(action "onHidden") onInserted=(action "onInserted") as |popover|}}
+      \{{#popover.trigger}} &lt;button class="btn btn-default">Click this button&lt;/button>
+      \{{/popover.trigger}}
+      \{{#popover.content}} Click again to hide.
+      \{{/popover.content}}
+      \{{/twbs-popover}} &lt;ul class="list-inline"> &lt;li>&lt;span class="label label-default
+      label-show">Show&lt;/span>&lt;/li> &lt;li>&lt;span class="label label-default label-shown">Shown&lt;/span>&lt;/li>
+      &lt;li>&lt;span class="label label-default label-hide">Hide&lt;/span>&lt;/li> &lt;li>&lt;span class="label
+      label-default label-hidden">Hidden&lt;/span>&lt;/li> &lt;li>&lt;span class="label label-default
+      label-inserted">Inserted&lt;/span>&lt;/li> &lt;/ul>
+    </pre>
+    {{! @formatter:on }}
   </div>
 </div>
 <div class="alert alert-warning">
   <ul>
     <li>
-      The <code>onShow</code>, <code>onShown</code>, <code>onHide</code>, <code>onHidden</code>, and
-      <code>onInserted</code> events (analogous to the
-      <a href="http://getbootstrap.com/javascript/#popovers-events" target="_blank">Bootstrap popover events</a>) of
-      the <code>\{{twbs-popover}}</code> can be hooked into your component's, controller's, or route's actions. In
-      this example I have the <code>onShow</code>, <code>onShown</code>, etc. properties set to actions (of the
-      exact same name) in my component that is responsible for rendering the <code>\{{twbs-popover}}</code>.
+      The
+      <code>onShow</code>,
+      <code>onShown</code>,
+      <code>onHide</code>,
+      <code>onHidden</code>, and
+      <code>onInserted</code>
+      events (analogous to the
+      <a href="http://getbootstrap.com/javascript/#popovers-events" target="_blank">Bootstrap popover events</a>) of the
+      <code>\{{twbs-popover}}</code>
+      can be hooked into your component's, controller's, or route's actions. In this example I have the
+      <code>onShow</code>,
+      <code>onShown</code>, etc. properties set to actions (of the exact same name) in my component that is responsible
+      for rendering the
+      <code>\{{twbs-popover}}</code>.
     </li>
     <li>These events do not receive or expect any arguments.</li>
     <li>
-      In this particular example we are setting the label of the corresponding popover event to the success colour
-      and then removing the colour after a few seconds. This was simply for demonstration purposes, you hopefully
-      have more nefarious things to do with these events.
+      In this particular example we are setting the label of the corresponding popover event to the success colour and
+      then removing the colour after a few seconds. This was simply for demonstration purposes, you hopefully have more
+      nefarious things to do with these events.
     </li>
   </ul>
 </div>

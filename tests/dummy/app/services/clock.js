@@ -3,7 +3,7 @@ import Clock from 'ember-cli-clock/services/clock';
 
 export default Clock.extend({
   interval: 1000,
-  formattedTime: computed('date', function() {
-    return this.get('date').toLocaleTimeString();
-  })
+  formattedTime: computed('date', function () {
+    return this.date.toLocaleTimeString();
+  }),
 });

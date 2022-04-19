@@ -5,7 +5,10 @@
 
 <div class="alert alert-warning">
   <p>
-    Keep in mind that when you use either the <code>twbs-popover/content</code> or <code>twbs-popover/title</code>
+    Keep in mind that when you use either the
+    <code>twbs-popover/content</code>
+    or
+    <code>twbs-popover/title</code>
     components, the generated popover will automatically be treated as html content.
   </p>
 </div>
@@ -20,31 +23,27 @@
       {{/popover.trigger}}
       {{#popover.content}}
         <p><strong>Click</strong> again to hide.</p>
-        <hr/>
+        <hr />
         <p>
-          <em>Lorem ipsum</em> dolor sit amet, consectetur adipisicing elit.
+          <em>Lorem ipsum</em>
+          dolor sit amet, consectetur adipisicing elit.
           <strong>Consequatur delectus dolores expedita ipsum odit praesentium quos, saepe totam.</strong>
         </p>
       {{/popover.content}}
     {{/twbs-popover}}
   </div>
   <div class="col-sm-8">
-    {{!-- @formatter:off --}}
-<pre>\{{#twbs-popover popoverTrigger="click" as |popover|}}
-  \{{#popover.trigger}}
-    &lt;button class="btn btn-default">Click This Button&lt;/button>
-  \{{/popover.trigger}}
-  \{{#popover.content}}
-    &lt;p>&lt;strong>Click&lt;/strong> again to hide.&lt;/p>
-    &lt;hr/>
-    &lt;p>
-      &lt;em>Lorem ipsum&lt;/em> dolor sit amet, consectetur adipisicing elit.
-      &lt;strong>Consequatur delectus dolores expedita ipsum odit praesentium quos, saepe totam.&lt;/strong>
-    &lt;/p>
-  \{{/popover.content}}
-\{{/twbs-popover}}
-</pre>
-      {{!-- @formatter:on --}}
+    {{! @formatter:off }}
+    <pre>\{{#twbs-popover popoverTrigger="click" as |popover|}}
+      \{{#popover.trigger}} &lt;button class="btn btn-default">Click This Button&lt;/button>
+      \{{/popover.trigger}}
+      \{{#popover.content}} &lt;p>&lt;strong>Click&lt;/strong> again to hide.&lt;/p> &lt;hr/> &lt;p> &lt;em>Lorem
+      ipsum&lt;/em> dolor sit amet, consectetur adipisicing elit. &lt;strong>Consequatur delectus dolores expedita ipsum
+      odit praesentium quos, saepe totam.&lt;/strong> &lt;/p>
+      \{{/popover.content}}
+      \{{/twbs-popover}}
+    </pre>
+    {{! @formatter:on }}
   </div>
 </div>
 
@@ -57,7 +56,8 @@
         <button class="btn btn-default">Click This Button</button>
       {{/popover.trigger}}
       {{#popover.title}}
-        <em>Popover</em> <u>With</u>
+        <em>Popover</em>
+        <u>With</u>
         <del>Title</del>
       {{/popover.title}}
       {{#popover.content}}
@@ -66,21 +66,17 @@
     {{/twbs-popover}}
   </div>
   <div class="col-sm-8">
-    {{!-- @formatter:off --}}
-<pre>\{{#twbs-popover popoverTrigger="click" as |popover|}}
-  \{{#popover.trigger}}
-    &lt;button class="btn btn-default">Click This Button&lt;/button>
-  \{{/popover.trigger}}
-  \{{#popover.title}}
-    &lt;em>Popover&lt;/em> &lt;u>With&lt;/u>
-    &lt;del>Title&lt;/del>
-  \{{/popover.title}}
-  \{{#popover.content}}
-    &lt;p>&lt;strong>Click&lt;/strong> again to hide.&lt;/p>
-  \{{/popover.content}}
-\{{/twbs-popover}}
-</pre>
-      {{!-- @formatter:on --}}
+    {{! @formatter:off }}
+    <pre>\{{#twbs-popover popoverTrigger="click" as |popover|}}
+      \{{#popover.trigger}} &lt;button class="btn btn-default">Click This Button&lt;/button>
+      \{{/popover.trigger}}
+      \{{#popover.title}} &lt;em>Popover&lt;/em> &lt;u>With&lt;/u> &lt;del>Title&lt;/del>
+      \{{/popover.title}}
+      \{{#popover.content}} &lt;p>&lt;strong>Click&lt;/strong> again to hide.&lt;/p>
+      \{{/popover.content}}
+      \{{/twbs-popover}}
+    </pre>
+    {{! @formatter:on }}
   </div>
 </div>
 
@@ -101,20 +97,18 @@
     {{/twbs-popover}}
   </div>
   <div class="col-sm-8">
-    {{!-- @formatter:off --}}
-<pre>\{{#twbs-popover as |popover|}}
-  \{{#popover.trigger}}
-    &lt;button class="btn btn-default">Click this button&lt;/button>
-  \{{/popover.trigger}}
-  \{{#popover.title}}
-    Current Time
-  \{{/popover.title}}
-  \{{#popover.content}}
-    \{{clock.formattedTime}}
-  \{{/popover.content}}
-\{{/twbs-popover}}
-</pre>
-      {{!-- @formatter:on --}}
+    {{! @formatter:off }}
+    <pre>\{{#twbs-popover as |popover|}}
+      \{{#popover.trigger}} &lt;button class="btn btn-default">Click this button&lt;/button>
+      \{{/popover.trigger}}
+      \{{#popover.title}} Current Time
+      \{{/popover.title}}
+      \{{#popover.content}}
+      \{{clock.formattedTime}}
+      \{{/popover.content}}
+      \{{/twbs-popover}}
+    </pre>
+    {{! @formatter:on }}
   </div>
 </div>
 
@@ -135,19 +129,17 @@
     {{/twbs-popover}}
   </div>
   <div class="col-sm-8">
-    {{!-- @formatter:off --}}
-<pre>\{{#twbs-popover as |popover|}}
-  \{{#popover.trigger}}
-    &lt;button class="btn btn-default">Click this button&lt;/button>
-  \{{/popover.trigger}}
-  \{{#popover.title}}
-    \{{clock.formattedTime}}
-  \{{/popover.title}}
-  \{{#popover.content}}
-    The current time is in the title.
-  \{{/popover.content}}
-\{{/twbs-popover}}
-</pre>
-      {{!-- @formatter:on --}}
+    {{! @formatter:off }}
+    <pre>\{{#twbs-popover as |popover|}}
+      \{{#popover.trigger}} &lt;button class="btn btn-default">Click this button&lt;/button>
+      \{{/popover.trigger}}
+      \{{#popover.title}}
+      \{{clock.formattedTime}}
+      \{{/popover.title}}
+      \{{#popover.content}} The current time is in the title.
+      \{{/popover.content}}
+      \{{/twbs-popover}}
+    </pre>
+    {{! @formatter:on }}
   </div>
 </div>

@@ -1,19 +1,37 @@
-# ember-cli-bootstrap3-popover [![GitHub version](http://badge.fury.io/gh/cybertoothca%2Fember-cli-bootstrap3-popover.svg)](http://badge.fury.io/gh/cybertoothca%2Fember-cli-bootstrap3-popover)
+# ember-cli-bootstrap3-popover
 
-![https://github.com/cybertoothca/ember-cli-bootstrap3-popover/actions](https://github.com/cybertoothca/ember-cli-bootstrap3-popover/workflows/Build,%20Test,%20Publish%20Coverage/badge.svg)
+[![npm version](http://badge.fury.io/js/ember-cli-bootstrap3-popover.svg)](http://badge.fury.io/js/ember-cli-bootstrap3-popover) ![downloads](https://img.shields.io/npm/dy/ember-cli-bootstrap3-popover.svg) [![Code Climate](http://codeclimate.com/github/cybertoothca/ember-cli-bootstrap3-popover/badges/gpa.svg)](http://codeclimate.com/github/cybertoothca/ember-cli-bootstrap3-popover)
 
-[![Code Climate](http://codeclimate.com/github/cybertoothca/ember-cli-bootstrap3-popover/badges/gpa.svg)](http://codeclimate.com/github/cybertoothca/ember-cli-bootstrap3-popover)
-
-[![npm version](http://badge.fury.io/js/ember-cli-bootstrap3-popover.svg)](http://badge.fury.io/js/ember-cli-bootstrap3-popover) ![downloads](https://img.shields.io/npm/dy/ember-cli-bootstrap3-popover.svg) ![Dependencies](http://david-dm.org/cybertoothca/ember-cli-bootstrap3-popover.svg) [![ember observer](http://emberobserver.com/badges/ember-cli-bootstrap3-popover.svg)](http://emberobserver.com/addons/ember-cli-bootstrap3-popover) [![License](http://img.shields.io/npm/l/ember-cli-bootstrap3-popover.svg)](LICENSE.md)
+[![ember-observer-badge](http://emberobserver.com/badges/ember-cli-bootstrap3-popover.svg)](http://emberobserver.com/addons/ember-cli-bootstrap3-popover)
 
 This addon allows you to quickly and conveniently create a [Bootstrap3 Popover](https://getbootstrap.com/docs/3.3/javascript/#popovers).
+
+## Compatibility
+
+- Ember.js v2.18 or above
+- Ember CLI v2.13 or above
+- Node.js v8 or above
+- Bootstrap 3.3.x+
+
+## Installation
+
+The following will install this addon:
+
+```
+ember install ember-cli-bootstrap3-popover
+```
 
 ## Demo
 
 The demonstration web application can be found here:
 [http://ember-cli-bootstrap3-popover.cybertooth.io/](http://ember-cli-bootstrap3-popover.cybertooth.io/).
 
-## What Does This Addon Do?
+## Usage
+
+As mentioned above there are dozens of examples on the demonstration site:
+[http://ember-cli-bootstrap3-popover.cybertooth.io/](http://ember-cli-bootstrap3-popover.cybertooth.io/)
+
+### What Does This Addon Do?
 
 This addon supplies the following _components_:
 
@@ -29,44 +47,6 @@ The following _mixin_ also ships with this addon:
 
 - `Popover` - imported as `import Popover as 'ember-cli-bootstrap3-popover/mixins/popover'` and includes all of the
   popover options as found in the [Bootstrap documentation](https://getbootstrap.com/docs/3.3/javascript/#popovers-options).
-
-_Further information about these items can be found in the Usage section below._
-
-## Requirements
-
-- **Ember >= 2.3.0**: This addon uses the [hash helper](http://emberjs.com/blog/2016/01/15/ember-2-3-released.html#toc_hash-helper) which was introduced in Ember-2.3.0.
-- Ember CLI
-- You must have Bootstrap 3.x installed in your Ember application. Feel free to use the
-  [ember-cli-bootstrap3-sass](http://emberobserver.com/addons/ember-cli-bootstrap3-sass)
-  addon to setup Bootstrap if you haven't already done so.
-- Popovers require the _tooltip_ plugin to be included in your version of Bootstrap.
-
-## Installation
-
-The following will install this addon:
-
-```
-ember install ember-cli-bootstrap3-popover
-```
-
-**As mentioned, you must install Bootstrap3 along with the tooltip plugin. See the requirements section above.**
-
-## Compatibility
-
-- Ember.js v2.18 or above
-- Ember CLI v2.13 or above
-- Node.js v8 or above
-
-### Upgrading
-
-When working through the Ember upgrade process, I recommend
-invoking the `ember install ember-cli-bootstrap3-popover` command once
-you are done to get the latest version of the addon.
-
-## Usage
-
-As mentioned above there are dozens of examples on the demonstration site:
-[http://ember-cli-bootstrap3-popover.cybertooth.io/](http://ember-cli-bootstrap3-popover.cybertooth.io/)
 
 ### Components
 
@@ -160,107 +140,10 @@ here: [http://getbootstrap.com/javascript/#popovers-options](https://getbootstra
 1. Ember-2.3.0+ is required because this addon uses the _hash_ helper.
 1. Bootstrap3 CSS and the tooltip Javascript plugin must be installed.
 
----
+## Contributing
 
-# Ember Addon Building And Testing
-
-## Setup
-
-### Checkout
-
-```
-$ git clone git@github.com:cybertoothca/ember-cli-bootstrap3-popover.git
-```
-
-### With NPM
-
-```
-npm install
-```
-
-### With Yarn
-
-```
-yarn
-```
-
-## Running The Dummy Application
-
-- `ember server`
-- Visit your app at http://localhost:4200.
-
-### Linting
-
-- `npm run lint:hbs`
-- `npm run lint:js`
-- `npm run lint:js -- --fix`
-
-### Running tests
-
-- `ember test` – Runs the test suite on the current Ember version
-- `ember test --server` – Runs the test suite in "watch mode"
-- `ember try:each` – Runs the test suite against multiple Ember versions
-
-## Building The Addon
-
-- `ember build`
-
-For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
-
-# Linking This Addon For Local Testing
-
-## Linking
-
-1. From the command line at the root of **this** project run the
-   `npm link` command to _link_ this addon within your local
-   node repository.
-1. From the _other_ Ember project that you wish to test this addon
-   in, execute the following command:
-   `npm link ember-cli-bootstrap3-popover`.
-1. Now in that same _other_ Ember project, you should go into the
-   `package.json` and add the ember addon with the version _\*_. It will
-   look something like this: `"ember-cli-bootstrap3-popover": "*"`. Now
-   when/if you execute `npm install` on this _other_ project it
-   will know to look for the linked addon rather than fetch it from
-   the central repository.
-
-## Unlinking
-
-1. Remove the addon from your local node repository with the following
-   command (that can be run anywhere):
-   `npm uninstall -g ember-cli-bootstrap3-popover`
-1. Remove the reference to the `ember-cli-bootstrap3-popover`
-   in your _other_ project's `package.json`.
-1. Run an `npm prune` and `bower prune` from the root of your _other_ project's command line.
-
-# Deploying The Dummy Application
-
-Make sure your `~/.aws/credentials` file has a profile named _cybertooth_
-with a valid key and secret,
-
-```
-[cybertooth]
-aws_access_key_id = <KEY>
-aws_secret_access_key = <SECRET>
-```
-
-Deploy by invoking the following command: `ember deploy production`
-
-Confirm your changes are showing up in our S3 container: http://ember-cli-bootstrap3-popover.cybertooth.io/
-
-# Releasing & Publishing To NPM
-
-```
-npm version x.y.z-sub.#
-git push
-git push --tags
-npm publish
-```
+See the [Contributing](CONTRIBUTING.md) guide for details.
 
 ## License
 
 This project is licensed under the [MIT License](LICENSE.md).
-
-## Contributing
-
-See the [Contributing](CONTRIBUTING.md) guide for details.
